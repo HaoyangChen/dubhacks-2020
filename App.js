@@ -11,6 +11,7 @@ import colorData from './data/color.json';
 
 import firebaseConfig from './config/firebase.config';
 import Routes from './routes/Routes';
+import Provider from './Provider';
 
 const theme = {
     ...DefaultTheme,
@@ -24,7 +25,7 @@ const theme = {
 
 firebase.initializeApp(firebaseConfig);
 
-export default Routes;
+export default Provider;
 
 const styles = StyleSheet.create({
     container: {
