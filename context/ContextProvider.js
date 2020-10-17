@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { createContext, useState } from 'react';
 
-export const AppContext = useContext({
+export const AppContext = createContext({
     user: { id: '' },
     login: () => {},
     logout: () => {},
