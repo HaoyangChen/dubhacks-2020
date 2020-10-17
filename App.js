@@ -7,6 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 // import { createStackNavigator } from '@react-navigation/stack';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { StyleSheet, Text, View } from 'react-native';
+import * as firebase from 'firebase';
+import firebaseConfig from './config/firebase.config';
 import colorData from './data/color.json';
 import LoginScreen from './routes/Authentication/LoginScreen';
 
@@ -19,6 +21,8 @@ const theme = {
         accent: colorData.brandColor.accent,
     },
 };
+
+firebase.initializeApp(firebaseConfig);
 
 export default function App() {
     return (
