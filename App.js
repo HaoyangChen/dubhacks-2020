@@ -1,16 +1,9 @@
-import React from 'react';
-import * as firebase from 'firebase';
-import { AppLoading } from 'expo';
-import * as Linking from 'expo-linking';
-import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from '@react-navigation/native';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import colorData from './data/color.json';
 
 import firebaseConfig from './config/firebase.config';
-import Routes from './routes/Routes';
 import Provider from './Provider';
 
 const theme = {
