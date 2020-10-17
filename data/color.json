@@ -1,0 +1,14 @@
+{
+  "brandColor": {
+    "primaryLighter": "#724676",
+    "primary": "#430848",
+    "accent": "#FCD16E"
+  },
+  "neutralColor": {
+    "darkest": "#1F1F1F",
+    "darker": "#777777",
+    "light": "#C4C4C4",
+    "background": "#F3F3F3",
+    "lightest": "#FBFBFB"
+  }
+}
