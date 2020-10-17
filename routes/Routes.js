@@ -25,10 +25,7 @@ export default function Routes() {
         <PaperProvider theme={theme}>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen
-                        name="Authentication"
-                        component={Authentication}
-                    />
+                    <Stack.Screen name="Welcome" component={Authentication} />
                     <Stack.Screen name="Dashboard" component={Dashboard} />
                 </Stack.Navigator>
             </NavigationContainer>
