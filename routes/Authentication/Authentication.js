@@ -17,21 +17,21 @@ const Authentication = () => {
                 If you are a new member, you will be guided to create an
                 account.
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyle}>
                 <ContainedIconButton
                     iconName="google"
                     width="85%"
                     btnText="Continue with Gmail"
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyle}>
                 <ContainedIconButton
                     iconName="yahoo"
                     width="85%"
                     btnText="Continue with Yahoo"
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyle}>
                 <ContainedIconButton
                     iconName="phone"
                     width="85%"
@@ -64,6 +64,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingLeft: 20,
         paddingRight: 20,
+    },
+    buttonStyle: {
+        marginTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
 

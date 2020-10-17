@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         color: colorData.neutralColor.lightest,
         textTransform: 'capitalize',
+        fontWeight: 'normal',
     },
     iconStyle: {
         transform: [{ scale: 1.5 }],
