@@ -44,7 +44,7 @@ const Authentication = () => {
 
 const styles = StyleSheet.create({
     loginGraphics: {
-        height: '45%',
+        height: '40%',
         width: '100%',
         resizeMode: 'stretch',
     },
