@@ -2,6 +2,9 @@
 
 Mobile App Project Repo for DubHacks 2020 (the largest 24-hour hackathon hosted in the Pacific Northwest). Our project name is VIGOR - Better Care and better health just one touch away.
 
+You can watch the project video by clicking this image:
+[![Watch the video](./assets/video_cover.png)](https://www.youtube.com/watch?v=hXfqR9V-i_g&feature=youtu.be)
+
 ## Tools and Framework Used:
 
 This project was developed using [React Native](https://reactnative.dev/) and the open-source platform of [Expo](https://docs.expo.io/). We created the frontend with React Native and used Google's [Firebase](https://firebase.google.com/) to handle the backend functionality
