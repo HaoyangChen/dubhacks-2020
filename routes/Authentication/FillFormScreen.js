@@ -12,14 +12,13 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import colors from '../../data/color.json';
 import ContainedIconButton from '../../components/ContainedIconButton';
 import colorData from '../../data/color.json';
-import { color } from 'react-native-reanimated';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 const FillFormScreen = ({ navigation }) => {
     return (
-        <View>
+        <ScrollView style={{backgroundColor: colors.neutralColor.lightest}}>
             <View style={[styles.homeHeaderStyle]}>
                 <Text style={styles.titleStyle}>Welcome, John Doe</Text>
             </View>
@@ -42,14 +41,13 @@ const FillFormScreen = ({ navigation }) => {
                     />
                 </TouchableOpacity>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
     containerBottom: {
-        paddingLeft: 21,
-        paddingRight: 21,
+        paddingHorizontal: 24,
     },
     titleStyle: {
         fontSize: 28,
@@ -68,11 +66,12 @@ const styles = StyleSheet.create({
         height: '42%',
         width: width,
         resizeMode: 'stretch',
+        marginTop: 64,
+        marginBottom: 32,
     },
     normalText: {
         fontSize: 22,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
         lineHeight: 37,
         color: colorData.neutralColor.darkest,
     },

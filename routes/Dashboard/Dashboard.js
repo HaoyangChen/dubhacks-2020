@@ -63,12 +63,12 @@ const Dashboard = ({ navigation }) => {
                             btnColor={colorData.brandColor.accent}
                             textColor={colorData.neutralColor.darkest}
                             btnText="Complete"
-                            width="60%"
+                            width="50%"
+                            marginLeft={8}
                             height={44}
                         />
                     </View>
                 </View>
-                {/* </View> */}
             </TouchableOpacity>
             <View style={styles.cardBtnWrapper}>
                 <TouchableOpacity style={styles.cardBtnStyle}>
@@ -113,12 +113,16 @@ const Dashboard = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor:colorData.neutralColor.background,
+    }, 
     titleStyle: {
         fontSize: 28,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         fontWeight: 'bold',
         lineHeight: 48,
         textAlign: 'center',
+        paddingTop: 16,
     },
     subTitleStyle: {
         fontSize: 18,
@@ -127,6 +131,7 @@ const styles = StyleSheet.create({
         lineHeight: 31,
         textAlign: 'center',
         color: colorData.brandColor.primaryLighter,
+        paddingBottom: 16,
     },
     homeHeaderStyle: {
         backgroundColor: colorData.neutralColor.lightest,
@@ -136,27 +141,25 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     listItem: {
-        width: width - 50,
-        borderRadius: 10,
+        width: width - 40,
+        borderRadius: 8,
         marginBottom: 16,
         flexDirection: 'row',
-        shadowColor: 'green',
         elevation: 8,
         shadowColor: 'rgba(31, 31, 31, 0.1)',
         backgroundColor: '#ffffff',
         shadowOffset: {
-            width: 0,
-            height: 0,
+            width: 2,
+            height: 2,
         },
         shadowOpacity: 1,
         shadowRadius: 4,
-        marginLeft: '5%',
-        marginRight: '5%',
+        marginLeft: 18,
     },
     listItemLeft: {
         width: 8,
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10,
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8,
         backgroundColor: colorData.brandColor.accent,
     },
     listItemRight: {
@@ -164,26 +167,15 @@ const styles = StyleSheet.create({
         paddingLeft: 12,
     },
     rightTitle: {
-        color: '#1F1F1F',
-        lineHeight: 22,
-        fontSize: 17,
-        marginTop: 5,
+        color: colorData.neutralColor.darkest,
+        lineHeight: 37.4,
+        fontSize: 22,
     },
     rightText: {
-        color: '#707070',
-        fontSize: 13,
-        lineHeight: 18,
-        marginTop: 2,
-    },
-    listItemWarning: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    listItemWarningText: {
-        color: '#C13F30',
-        fontSize: 13,
-        lineHeight: 18,
-        marginLeft: 5,
+        color: colorData.neutralColor.darker,
+        fontSize: 18,
+        lineHeight: 30.6,
+        marginTop: 24,
     },
     leftRight: {
         flexDirection: 'row',
@@ -202,7 +194,6 @@ const styles = StyleSheet.create({
     fontTime: {
         fontSize: 18,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
         lineHeight: 31,
         color: colorData.neutralColor.darker,
     },
@@ -212,11 +203,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexWrap: 'wrap',
         alignContent: 'space-around',
+        marginBottom: 16,
     },
     cardBtnStyle: {
         backgroundColor: colorData.brandColor.primaryLighter,
-        width: Math.floor(width / 2 - 35),
-        height: Math.floor(width / 2 - 35),
+        shadowColor: 'rgba(0, 0, 0, 0.25)',
+        shadowOpacity: 1,
+        elevation: 6,
+        shadowRadius: 8,
+        shadowOffset:{width: 2, height: 2,},
+        borderRadius: 8,
+        width: Math.floor(width / 2 - 24),
+        height: Math.floor(width / 2 - 24),
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
@@ -234,7 +232,7 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         lineHeight: 31,
         textAlign: 'center',
-        marginTop: 10,
+        marginTop: 8,
         color: colorData.neutralColor.lightest,
     },
 });
