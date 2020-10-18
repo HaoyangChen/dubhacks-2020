@@ -22,7 +22,7 @@ const AdjustTextSize = ({ notification }) => {
                     source={require('../../../assets/settings/textsizeIcon.png')}
                     style={styles.cardBtnIcon}
                 />
-                <Text style={styles.cardTopText}>Adjust text size</Text>
+                <Text style={styles.cardTopText}>Adjust Text Size</Text>
             </View>
             <View style={styles.cardBottomStyle}>
                 <TouchableOpacity style={styles.option}>
@@ -44,7 +44,7 @@ const AdjustTextSize = ({ notification }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={[styles.option, styles.button, styles.cancelButton]}
+                    style={[styles.button, styles.cancelButton]}
                 >
                     <Image
                         source={require('../../../assets/settings/cancelIcon.png')}
@@ -55,14 +55,14 @@ const AdjustTextSize = ({ notification }) => {
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    style={[styles.option, styles.button, styles.saveButton]}
+                    style={[styles.button, styles.saveButton]}
                 >
                     <Image
                         source={require('../../../assets/settings/saveIcon.png')}
                         style={styles.buttonIcon}
                     />
                     <Text style={[styles.buttonText, styles.saveText]}>
-                        Save change
+                        Save Change
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -72,14 +72,14 @@ const AdjustTextSize = ({ notification }) => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 21,
+        paddingHorizontal: 16,
     },
     cardTopStyle: {
         width: '100%',
         backgroundColor: colorData.brandColor.primaryLighter,
-        marginTop: 40,
+        marginTop: 24,
         flexDirection: 'row',
-        height: 55,
+        height: 62,
         justifyContent: 'space-around',
         alignItems: 'center',
         paddingLeft: 80,
@@ -88,32 +88,28 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 8,
     },
     cardBtnIcon: {
-        width: 23,
-        height: 23,
+        width: 24,
+        height: 24,
         justifyContent: 'center',
         alignItems: 'center',
         resizeMode: 'stretch',
     },
     cardTopText: {
         color: colorData.neutralColor.lightest,
-        fontSize: 18,
+        fontSize: 22,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
-        lineHeight: 31,
-    },
-    wrapper: {
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
+        lineHeight: 37.4,
+        marginLeft: 12, 
     },
 
     cardBottomStyle: {
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
+        borderWidth: 0,
         backgroundColor: colorData.neutralColor.lightest,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
+        shadowOpacity: 0.25,
         shadowRadius: 2,
         elevation: 5,
         padding: 28,
@@ -130,11 +126,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         padding: 30,
+        borderWidth:0,
         borderRadius: 8,
         marginBottom: 30,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
+        shadowOpacity: 0.25,
         shadowRadius: 2,
         elevation: 5,
     },
@@ -145,16 +142,17 @@ const styles = StyleSheet.create({
         color: colorData.neutralColor.darkest,
     },
     optionTextSmall: {
-        fontSize: 10,
-        fontWeight: '200',
+        fontSize: 18,
+        lineHeight: 30.6,
     },
     optionTextMedium: {
-        fontSize: 16,
+        fontSize: 22,
+        lineHeight: 37.4,
         fontWeight: 'normal',
     },
     optionTextBig: {
-        fontSize: 24,
-        fontWeight: 'bold',
+        fontSize: 28,
+        lineHeight: 47.6,
     },
 
     optionSelected: {
@@ -166,6 +164,12 @@ const styles = StyleSheet.create({
     button: {
         flex: 1,
         flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        width: "100%",
+        borderRadius: 8,
+        marginTop: 16,
     },
     buttonIcon: {
         width: 20,
@@ -175,9 +179,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        fontSize: 14,
+        fontSize: 18,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
         textAlign: 'center',
         width: '50%',
         fontStyle: 'normal',
@@ -192,7 +195,9 @@ const styles = StyleSheet.create({
     },
 
     saveText: {
-        marginLeft: 0,
+        marginLeft: 8,
+        fontSize: 18,
+        lineHeight: 30.6,
         color: colorData.neutralColor.lightest,
     },
 
@@ -200,7 +205,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: colorData.brandColor.primaryLighter,
         borderStyle: 'solid',
-        borderWidth: 1,
+        borderWidth: 2,
     },
     cancelIcon: {
         //backgroundColor: colorData.brandColor.primaryLighter,
@@ -209,6 +214,7 @@ const styles = StyleSheet.create({
         marginLeft: -15,
         color: colorData.brandColor.primaryLighter,
         fontSize: 18,
+        lineHeight: 30.6
     },
 });
 

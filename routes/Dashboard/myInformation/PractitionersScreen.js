@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import * as firebase from 'firebase';
 import colorData from '../../../data/color.json';
-import { color } from 'react-native-reanimated';
 import ContainedIconButton from '../../../components/ContainedIconButton';
 
 const width = Dimensions.get('window').width;
