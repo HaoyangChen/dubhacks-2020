@@ -4,12 +4,12 @@ import {
     ScrollView,
     TouchableOpacity,
     Text,
-    Platform,
+    Dimensions
 } from 'react-native';
-import PropTypes from 'prop-types';
 import colorData from '../../data/color.json';
 import ProgressButtons from './ProgressButtons';
 import ProgressButtonNoPrev from './ProgressButtonNoPrev';
+const width = Dimensions.get("window").width;
 
 class ProgressStep extends Component {
     onNextStep = async () => {
@@ -38,7 +38,7 @@ class ProgressStep extends Component {
             justifyContent: "center",
             alignItems: "center",
             height: 60,
-            width: 327,
+            width: width - 48,
 
             borderRadius: 8,
             backgroundColor: colorData.brandColor.primary,
@@ -50,7 +50,6 @@ class ProgressStep extends Component {
             fontSize: 18,
             fontFamily: 'Arial',
             ...this.props.nextBtnTextStyle,
-            ...this.props.nextBtnText,
         };
 
         const disabledBtnText = {
@@ -84,7 +83,7 @@ class ProgressStep extends Component {
         const btnStyle = {
             justifyContent: "center",
             alignItems: "center",
-            width: 327,
+            width: width - 48,
             height:60,
             borderRadius: 8,
             borderColor:colorData.brandColor.primary,
@@ -159,28 +158,6 @@ class ProgressStep extends Component {
     }
 }
 
-ProgressStep.propTypes = {
-    label: PropTypes.string,
-    onNext: PropTypes.func,
-    onPrevious: PropTypes.func,
-    onSubmit: PropTypes.func,
-    setActiveStep: PropTypes.func,
-    nextBtnText: PropTypes.string,
-    previousBtnText: PropTypes.string,
-    finishBtnText: PropTypes.string,
-    stepCount: PropTypes.number,
-    nextBtnStyle: PropTypes.object,
-    nextBtnTextStyle: PropTypes.object,
-    nextBtnDisabled: PropTypes.bool,
-    previousBtnStyle: PropTypes.object,
-    previousBtnTextStyle: PropTypes.object,
-    previousBtnDisabled: PropTypes.bool,
-    scrollViewProps: PropTypes.object,
-    viewProps: PropTypes.object,
-    errors: PropTypes.bool,
-    removeBtnRow: PropTypes.bool,
-    scrollable: PropTypes.bool,
-};
 
 ProgressStep.defaultProps = {
     nextBtnText: 'Proceed',

@@ -5,11 +5,13 @@ import {
     View,
     ScrollView,
 } from 'react-native';
+import RadioButtons from '../../components/RadioButton';
 import colorData from '../../data/color.json';
 import ProgressSteps from '../../components/Stepper/ProgressSteps';
 import ProgressStep from '../../components/Stepper/ProgressStep';
 import TextField from '../../components/TextField';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { color } from 'react-native-reanimated';
 
 
 
@@ -41,11 +43,17 @@ const CreateAccount = ({ navigation }) => {
     const [country, setCountry] = useState('');
     
 
-
-
-
     // state for scroll and enter jump to next input
     let scrollRef = useRef(null);
+    var sex_props = [
+        {label: 'Male', value: 0 },
+        {label: 'Female', value: 1 }
+    ];
+
+    var govId_props = [
+        {label: 'Driver\'s License', value: 0},
+        {label: 'Social Security Number', value: 1},
+    ];
 
     return (
         <ScrollView
@@ -61,7 +69,7 @@ const CreateAccount = ({ navigation }) => {
                     <ProgressSteps topOffset={24} marginBottom={32}>
                         <ProgressStep
                             label="Basic Info"
-                            nextBtnText="Proceed to Insurance"
+                            nextBtnText={'Proceed to Insurance'}
                             nextBtnStyle={styles.nextBtnStyle}
                             nextBtnTextStyle={styles.nextBtnTextStyle}
                             previousBtnStyle={styles.prevBtnStyle}
@@ -103,13 +111,28 @@ const CreateAccount = ({ navigation }) => {
                                         value={dateOfBirth}
                                     />
                                 </View>
+                                <View style={styles.spacing}>
+                                    <Text style={{fontSize: 18, 
+                                        fontFamily: "Arial", 
+                                        marginBottom: 16, 
+                                        color: colorData.neutralColor.darkest}}
+                                    >
+                                        Select your sex
+                                    </Text>
+                                    <RadioButtons 
+                                        radios={sex_props}
+                                        initial={0}
+                                        formHorizontal={true}
+                                        onPress={(value) => {this.setState({value:value})}}
+                                    />
+                                </View>
                             </ScrollView>
                         </ProgressStep>
 
                         <ProgressStep
                             label="Insurance"
-                            nextBtnText="Proceed to Payment"
-                            previousBtnText="Back to Basic Info"
+                            nextBtnText={"Proceed to Payment"}
+                            previousBtnText={"Back to Basic Info"}
                         >
                             <View>
                               <View style={styles.spacing}>
@@ -130,8 +153,16 @@ const CreateAccount = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={styles.spacing}>
-                                    <Text style={styles.titleStyle}>Goverment ID Type</Text>
-                                   
+                                    <Text 
+                                        style={[styles.titleStyle, {marginBottom: 12}]}
+                                    >
+                                        Goverment Issued Identification Type
+                                    </Text>
+                                   <RadioButtons 
+                                        radios={govId_props}
+                                        initial={0}
+                                        labelColor={colorData.brandColor.primaryLighter}
+                                    />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
@@ -149,8 +180,8 @@ const CreateAccount = ({ navigation }) => {
 
                         <ProgressStep
                             label="Payment"
-                            finishBtnText="Save and Proceed"
-                            previousBtnText="Back to Insurance"
+                            finishBtnText={"Save and Proceed"}
+                            previousBtnText={"Back to Insurance"}
                         >
                             <View>
 
@@ -173,7 +204,7 @@ const CreateAccount = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={styles.row}>
-                                    <View style={[styles.spacing, {width: 163}]}>
+                                    <View style={[styles.spacing, {width: 155}]}>
                                         <TextField
                                             label="Expiration Date"
                                             placeholder={'MM/YY'}
