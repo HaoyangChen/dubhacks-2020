@@ -11,8 +11,6 @@ import {
 } from 'react-native';
 import * as firebase from 'firebase';
 import colorData from '../../../data/color.json';
-import { color } from 'react-native-reanimated';
-import ContainedIconButton from '../../../components/ContainedIconButton';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -66,37 +64,39 @@ const MyInformation = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 21,
+        paddingHorizontal: 16,
+        backgroundColor: colorData.neutralColor.background,
     },
     cardBtnStyle: {
         backgroundColor: colorData.brandColor.primaryLighter,
         width: '100%',
-        height: Math.floor(width / 2 - 15),
+        height: 163,
         justifyContent: 'space-around',
         alignItems: 'center',
         flexDirection: 'row',
-        padding: 40,
         borderRadius: 8,
         marginTop: 24,
     },
     cardBtnIcon: {
         width: 60,
         height: 60,
+        marginLeft: 28,
+        overflow: 'visible',
         justifyContent: 'center',
         alignItems: 'center',
     },
     cardText: {
-        fontSize: 18,
+        fontSize: 28,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         fontWeight: 'normal',
-        lineHeight: 31,
+        lineHeight: 47.6,
         textAlign: 'center',
         marginTop: 10,
         width: '50%',
         color: colorData.neutralColor.lightest,
     },
     bottomMargin: {
-        marginBottom: 100,
+        marginBottom: 32,
     },
 });
 
