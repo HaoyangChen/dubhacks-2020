@@ -8,6 +8,7 @@ import {
     ScrollView,
     Dimensions,
 } from 'react-native';
+import ContainedIconButton from '../../../components/ContainedIconButton';
 import colorData from '../../../data/color.json';
 
 const width = Dimensions.get('window').width;
@@ -16,68 +17,54 @@ const height = Dimensions.get('window').height;
 const AdjustTextSize = ({ notification }) => {
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.wrapper}>
-                <View style={styles.header}>
-                    <Image
-                        source={require('../../../assets/settings/textsizeIcon.png')}
-                        style={styles.headerIcon}
-                    />
-                    <Text style={styles.headerText}>Adjust text size</Text>
-                </View>
-                <View style={styles.content}>
-                    <TouchableOpacity style={styles.option}>
-                        <Text
-                            style={[styles.optionText, styles.optionTextSmall]}
-                        >
-                            Small
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.option, styles.optionSelected]}
-                    >
-                        <Text
-                            style={[styles.optionText, styles.optionTextMedium]}
-                        >
-                            Medium (Current)
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.option}>
-                        <Text style={[styles.optionText, styles.optionTextBig]}>
-                            Large
-                        </Text>
-                    </TouchableOpacity>
+            <View style={styles.cardTopStyle}>
+                <Image
+                    source={require('../../../assets/settings/textsizeIcon.png')}
+                    style={styles.cardBtnIcon}
+                />
+                <Text style={styles.cardTopText}>Adjust text size</Text>
+            </View>
+            <View style={styles.cardBottomStyle}>
+                <TouchableOpacity style={styles.option}>
+                    <Text style={[styles.optionText, styles.optionTextSmall]}>
+                        Small
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.option, styles.optionSelected]}
+                >
+                    <Text style={[styles.optionText, styles.optionTextMedium]}>
+                        Medium (Current)
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.option}>
+                    <Text style={[styles.optionText, styles.optionTextBig]}>
+                        Large
+                    </Text>
+                </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={[
-                            styles.option,
-                            styles.button,
-                            styles.cancelButton,
-                        ]}
-                    >
-                        <Image
-                            source={require('../../../assets/settings/cancelIcon.png')}
-                            style={[styles.buttonIcon, styles.cancelIcon]}
-                        />
-                        <Text style={[styles.buttonText, styles.cancelText]}>
-                            Cancel
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[
-                            styles.option,
-                            styles.button,
-                            styles.saveButton,
-                        ]}
-                    >
-                        <Image
-                            source={require('../../../assets/settings/saveIcon.png')}
-                            style={styles.buttonIcon}
-                        />
-                        <Text style={[styles.buttonText, styles.saveText]}>
-                            Save change
-                        </Text>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                    style={[styles.option, styles.button, styles.cancelButton]}
+                >
+                    <Image
+                        source={require('../../../assets/settings/cancelIcon.png')}
+                        style={[styles.buttonIcon, styles.cancelIcon]}
+                    />
+                    <Text style={[styles.buttonText, styles.cancelText]}>
+                        Cancel
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.option, styles.button, styles.saveButton]}
+                >
+                    <Image
+                        source={require('../../../assets/settings/saveIcon.png')}
+                        style={styles.buttonIcon}
+                    />
+                    <Text style={[styles.buttonText, styles.saveText]}>
+                        Save change
+                    </Text>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     );
@@ -86,6 +73,33 @@ const AdjustTextSize = ({ notification }) => {
 const styles = StyleSheet.create({
     container: {
         padding: 21,
+    },
+    cardTopStyle: {
+        width: '100%',
+        backgroundColor: colorData.brandColor.primaryLighter,
+        marginTop: 40,
+        flexDirection: 'row',
+        height: 55,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        paddingLeft: 80,
+        paddingRight: 80,
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
+    },
+    cardBtnIcon: {
+        width: 23,
+        height: 23,
+        justifyContent: 'center',
+        alignItems: 'center',
+        resizeMode: 'stretch',
+    },
+    cardTopText: {
+        color: colorData.neutralColor.lightest,
+        fontSize: 18,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        fontWeight: 'normal',
+        lineHeight: 31,
     },
     wrapper: {
         borderColor: 'black',
@@ -120,21 +134,36 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 
-    content: {
-        flex: 1,
+    cardBottomStyle: {
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8,
+        backgroundColor: colorData.neutralColor.lightest,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+        padding: 28,
         alignItems: 'center',
+        flex: 1,
+        marginBottom: 80,
     },
 
     option: {
         backgroundColor: colorData.neutralColor.lightest,
-        width: '90%',
-        height: Math.floor(height / 6 - 22),
+        width: '100%',
+        // height: Math.floor(height / 6 - 22),
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        padding: 40,
+        padding: 30,
         borderRadius: 8,
-        marginTop: 10,
+        marginBottom: 30,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
     },
     optionText: {
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
@@ -195,8 +224,7 @@ const styles = StyleSheet.create({
     },
 
     cancelButton: {
-        backgroundColor: colorData.brandColor.lightest,
-        borderRadius: 5,
+        borderRadius: 8,
         borderColor: colorData.brandColor.primaryLighter,
         borderStyle: 'solid',
         borderWidth: 1,
@@ -207,6 +235,7 @@ const styles = StyleSheet.create({
     cancelText: {
         marginLeft: -15,
         color: colorData.brandColor.primaryLighter,
+        fontSize: 18,
     },
 });
 

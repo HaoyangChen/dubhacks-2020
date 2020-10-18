@@ -24,7 +24,7 @@ const ContainedIconButton = (params) => {
                 styles.containedButtonLabel,
                 { color: params.textColor },
             ]}
-            mode="contained"
+            mode={params.btnMode ? params.btnMode : 'contained'}
         >
             {params.btnText}
         </Button>
