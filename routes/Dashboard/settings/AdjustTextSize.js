@@ -106,33 +106,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'solid',
     },
-    header: {
-        backgroundColor: colorData.brandColor.primaryLighter,
-        width: '100%',
-        flex: 1,
-        height: Math.floor(width / 6),
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-    },
-    headerIcon: {
-        width: 20,
-        height: 20,
-        marginLeft: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    headerText: {
-        fontSize: 14,
-        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
-        textAlign: 'center',
-        width: '50%',
-        marginLeft: -15,
-        color: colorData.neutralColor.lightest,
-        fontStyle: 'normal',
-        textAlign: 'center',
-    },
 
     cardBottomStyle: {
         borderBottomLeftRadius: 8,
