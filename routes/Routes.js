@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 
 import Authentication from './Authentication/Authentication';
+import CreateAccount from './CreateAccount/CreateAccount';
 import Dashboard from './Dashboard/Dashboard';
 import FillFormScreen from './Authentication/FillFormScreen';
 import MyInformation from './Dashboard/myInformation/MyInformation';
@@ -30,6 +31,10 @@ export default function Routes() {
             <NavigationContainer>
                 <Stack.Navigator>
                     <Stack.Screen name="Welcome" component={Authentication} />
+                    <Stack.Screen
+                        name="Create Account"
+                        component={CreateAccount}
+                    />
                     <Stack.Screen name="Home Page" component={Dashboard} />
                     <Stack.Screen name="Fill Form" component={FillFormScreen} />
                     <Stack.Screen

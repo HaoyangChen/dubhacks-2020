@@ -34,7 +34,7 @@ const FillFormScreen = ({ navigation }) => {
                 </Text>
                 <TouchableOpacity
                     style={styles.buttonStyle}
-                    onPress={() => navigation.navigate('Home Page')}
+                    onPress={() => navigation.navigate('Create Account')}
                 >
                     <ContainedIconButton
                         textColor={colorData.neutralColor.lightest}
