@@ -8,7 +8,8 @@ import {
     ScrollView,
     Dimensions,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from 'react-native-check-box';
+//import CheckBox from '@react-native-community/checkbox';
 
 import colorData from '../../../data/color.json';
 
@@ -39,9 +40,9 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
-                            value={toggle_1}
-                            onValueChange={(newValue) => {
-                                setToggle1(newValue);
+                            isChecked={toggle_1}
+                            onClick={() => {
+                                setToggle1(!toggle_1);
                             }}
                         />
                         <Text>Everything</Text>
@@ -49,10 +50,10 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
-                            value={toggle_2}
-                            onValueChange={(newValue) => {
+                            isChecked={toggle_2}
+                            onClick={() => {
                                 // Do some data collect/state toggle here
-                                setToggle2(newValue);
+                                setToggle2(!toggle_2);
                             }}
                         />
                         <Text>Upcoming appointment</Text>
@@ -60,10 +61,10 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
-                            value={toggle_3}
-                            onValueChange={(newValue) => {
+                            isChecked={toggle_3}
+                            onClick={() => {
                                 // Do some data collect/state toggle here
-                                setToggle3(newValue);
+                                setToggle3(!toggle_3);
                             }}
                         />
                         <Text>Medication and Prescription</Text>
@@ -71,10 +72,10 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
-                            value={toggle_4}
-                            onValueChange={(newValue) => {
+                            isChecked={toggle_4}
+                            onClick={() => {
                                 // Do some data collect/state toggle here
-                                setToggle4(newValue);
+                                setToggle4(!toggle_4);
                             }}
                         />
                         <Text>New chats</Text>
@@ -82,10 +83,10 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
-                            value={toggle_5}
-                            onValueChange={(newValue) => {
+                            isChecked={toggle_5}
+                            onClick={() => {
                                 // Do some data collect/state toggle here
-                                setToggle5(newValue);
+                                setToggle5(!toggle_5);
                             }}
                         />
                         <Text>New charges to my bill</Text>
