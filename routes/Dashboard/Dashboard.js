@@ -34,14 +34,20 @@ const Dashboard = ({ navigation }) => {
             <TouchableOpacity style={[styles.listItem]}>
                 <View style={[styles.listItemLeft]} />
                 <View style={[styles.listItemRight]}>
-                    <Text style={[styles.fontRegular, styles.cardTitle]}>
+                    <Text style={[styles.fontCardTitle, styles.cardTitle]}>
                         Take Diabetic Medication
                     </Text>
-                    <Text style={[styles.fontRegular, styles.rightTitle]}>
+                    <Text
+                        style={[
+                            styles.fontCardTitle,
+                            styles.boldFont,
+                            styles.rightTitle,
+                        ]}
+                    >
                         10:30 AM
                     </Text>
                     <View style={styles.leftRight}>
-                        <Text style={[styles.fontRegular, styles.rightText]}>
+                        <Text style={[styles.fontTime, styles.rightText]}>
                             March 13, 2020
                         </Text>
                         <ContainedIconButton
@@ -49,6 +55,7 @@ const Dashboard = ({ navigation }) => {
                             btnColor={colorData.brandColor.accent}
                             textColor={colorData.neutralColor.darkest}
                             btnText="Complete"
+                            width="60%"
                             height={44}
                         />
                     </View>
@@ -90,6 +97,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 4,
+        marginLeft: '5%',
+        marginRight: '5%',
     },
     listItemLeft: {
         width: 8,
@@ -122,6 +131,27 @@ const styles = StyleSheet.create({
         fontSize: 13,
         lineHeight: 18,
         marginLeft: 5,
+    },
+    leftRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    fontCardTitle: {
+        fontSize: 22,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        fontWeight: 'normal',
+        lineHeight: 37,
+    },
+    boldFont: {
+        fontWeight: 'bold',
+    },
+    fontTime: {
+        fontSize: 18,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        fontWeight: 'normal',
+        lineHeight: 31,
+        color: colorData.neutralColor.darker,
     },
 });
 
