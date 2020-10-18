@@ -26,7 +26,7 @@ export default function Routes() {
             <NavigationContainer>
                 <Stack.Navigator>
                     <Stack.Screen name="Welcome" component={Authentication} />
-                    <Stack.Screen name="Dashboard" component={Dashboard} />
+                    <Stack.Screen name="Home Page" component={Dashboard} />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 24,
     },
     loginGraphics: {
-        height: '40%',
+        height: '35%',
         width: '100%',
         resizeMode: 'stretch',
     },
