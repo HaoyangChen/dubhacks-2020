@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 
 import Authentication from './Authentication/Authentication';
+import CreateAccount from './CreateAccount/CreateAccount';
 import Dashboard from './Dashboard/Dashboard';
 import colorData from '../data/color.json';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
@@ -25,6 +26,7 @@ export default function Routes() {
         <PaperProvider theme={theme}>
             <NavigationContainer>
                 <Stack.Navigator>
+                    <Stack.Screen name="Create Account" component={CreateAccount} />
                     <Stack.Screen name="Welcome" component={Authentication} />
                     <Stack.Screen name="Home Page" component={Dashboard} />
                 </Stack.Navigator>
