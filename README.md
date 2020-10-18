@@ -4,7 +4,7 @@ Mobile App Project Repo for DubHacks 2020 (the largest 24-hour hackathon hosted 
 
 ## Tools and Framework Used:
 
-This project was developed using [React Native](https://reactnative.dev/) and the open-source platform of [Expo](https://docs.expo.io/).
+This project was developed using [React Native](https://reactnative.dev/) and the open-source platform of [Expo](https://docs.expo.io/). We created the frontend with React Native and used Google's [Firebase](https://firebase.google.com/) to handle the backend functionality
 
 ## Mobile App UI Design:
 
@@ -12,11 +12,11 @@ We use Figma for our design : [UI Prototype](https://www.figma.com/file/9ILk7u3R
 
 ## Routing and Navigation:
 
-We use [React Navigation](https://reactnavigation.org/) to handle the screen transitions
+We used [React Navigation](https://reactnavigation.org/) to handle the screen transitions
 
 ## Authentication & Database Storage
 
-We use Google's [Firebase](https://firebase.google.com/) to enable the Gmail log in feature and store user information
+We used Google's [Firebase](https://firebase.google.com/) to enable the Gmail log in feature and store user information
 
 ## UI Library Used:
 
