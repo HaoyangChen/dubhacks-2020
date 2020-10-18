@@ -1,10 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {
-    Text,
-    StyleSheet,
-    View,
-    ScrollView,
-} from 'react-native';
+import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import RadioButtons from '../../components/RadioButton';
 import colorData from '../../data/color.json';
 import ProgressSteps from '../../components/Stepper/ProgressSteps';
@@ -12,8 +7,6 @@ import ProgressStep from '../../components/Stepper/ProgressStep';
 import TextField from '../../components/TextField';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
-
-
 
 const CreateAccount = ({ navigation }) => {
     //first step validation
@@ -41,23 +34,22 @@ const CreateAccount = ({ navigation }) => {
     const [zipCode, setZipCode] = useState('');
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
-    
 
     // state for scroll and enter jump to next input
     let scrollRef = useRef(null);
     var sex_props = [
-        {label: 'Male', value: 0 },
-        {label: 'Female', value: 1 }
+        { label: 'Male', value: 0 },
+        { label: 'Female', value: 1 },
     ];
 
     var govId_props = [
-        {label: 'Driver\'s License', value: 0},
-        {label: 'Social Security Number', value: 1},
+        { label: "Driver's License", value: 0 },
+        { label: 'Social Security Number', value: 1 },
     ];
 
     return (
         <ScrollView
-            style={{ backgroundColor: colorData.neutralColor.lightest}}
+            style={{ backgroundColor: colorData.neutralColor.lightest }}
             showsVerticalScrollIndicator={true}
             ref={(ref) => {
                 scrollRef = ref;
@@ -80,8 +72,12 @@ const CreateAccount = ({ navigation }) => {
                                     <TextField
                                         label="First Name"
                                         autoCompleteType="username"
-                                        placeholder={'Type to enter your first name'}
-                                        onChangeText={(firstName) => setFirstName(firstName)}
+                                        placeholder={
+                                            'Type to enter your first name'
+                                        }
+                                        onChangeText={(firstName) =>
+                                            setFirstName(firstName)
+                                        }
                                         value={firstName}
                                     />
                                 </View>
@@ -89,41 +85,55 @@ const CreateAccount = ({ navigation }) => {
                                     <TextField
                                         label="Last Name"
                                         autoCompleteType="username"
-                                        placeholder={'Type to enter your last name'}
-                                        onChangeText={(lastName) => setLastName(lastName)}
+                                        placeholder={
+                                            'Type to enter your last name'
+                                        }
+                                        onChangeText={(lastName) =>
+                                            setLastName(lastName)
+                                        }
                                         value={lastName}
                                     />
                                 </View>
                                 <View style={styles.spacing}>
-                                <TextField
-                                    label="Phone Number"
-                                    autoCompleteType="tel"
-                                    placeholder={'(000)-000-0000'}
-                                    onChangeText={(phoneNum) => setPhoneNum(phoneNum)}
-                                    value={phoneNum}
-                                />
+                                    <TextField
+                                        label="Phone Number"
+                                        autoCompleteType="tel"
+                                        placeholder={'(000)-000-0000'}
+                                        onChangeText={(phoneNum) =>
+                                            setPhoneNum(phoneNum)
+                                        }
+                                        value={phoneNum}
+                                    />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Date of Birth"
                                         placeholder={'MM/DD/YYYY'}
-                                        onChangeText={(dateOfBirth) => setDateOfBirth(dateOfBirth)}
+                                        onChangeText={(dateOfBirth) =>
+                                            setDateOfBirth(dateOfBirth)
+                                        }
                                         value={dateOfBirth}
                                     />
                                 </View>
                                 <View style={styles.spacing}>
-                                    <Text style={{fontSize: 18, 
-                                        fontFamily: "Arial", 
-                                        marginBottom: 16, 
-                                        color: colorData.neutralColor.darkest}}
+                                    <Text
+                                        style={{
+                                            fontSize: 18,
+                                            fontFamily: 'Arial',
+                                            marginBottom: 16,
+                                            color:
+                                                colorData.neutralColor.darkest,
+                                        }}
                                     >
                                         Select your sex
                                     </Text>
-                                    <RadioButtons 
+                                    <RadioButtons
                                         radios={sex_props}
                                         initial={0}
                                         formHorizontal={true}
-                                        onPress={(value) => {this.setState({value:value})}}
+                                        onPress={(value) => {
+                                            this.setState({ value: value });
+                                        }}
                                     />
                                 </View>
                             </ScrollView>
@@ -131,90 +141,116 @@ const CreateAccount = ({ navigation }) => {
 
                         <ProgressStep
                             label="Insurance"
-                            nextBtnText={"Proceed to Payment"}
-                            previousBtnText={"Back to Basic Info"}
+                            nextBtnText={'Proceed to Payment'}
+                            previousBtnText={'Back to Basic Info'}
                         >
                             <View>
-                              <View style={styles.spacing}>
-                                <TextField
-                                    label="Insurance Company Name"
-                                    placeholder={'Type to enter your insurance company'}
-                                    onChangeText={(insuranceName) => setInsuranceName(insuranceName)}
-                                    value={insuranceName}
-                                />
+                                <View style={styles.spacing}>
+                                    <TextField
+                                        label="Insurance Company Name"
+                                        placeholder={
+                                            'Type to enter your insurance company'
+                                        }
+                                        onChangeText={(insuranceName) =>
+                                            setInsuranceName(insuranceName)
+                                        }
+                                        value={insuranceName}
+                                    />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Insurance ID"
-                                        placeholder={'Type to enter your Insurance ID'}
-                                        onChangeText={(insuranceID) => setInsuranceID(insuranceID)}
+                                        placeholder={
+                                            'Type to enter your Insurance ID'
+                                        }
+                                        onChangeText={(insuranceID) =>
+                                            setInsuranceID(insuranceID)
+                                        }
                                         value={insuranceID}
                                         keyboardType="number-pad"
                                     />
                                 </View>
                                 <View style={styles.spacing}>
-                                    <Text 
-                                        style={[styles.titleStyle, {marginBottom: 12}]}
+                                    <Text
+                                        style={[
+                                            styles.titleStyle,
+                                            { marginBottom: 12 },
+                                        ]}
                                     >
                                         Goverment Issued Identification Type
                                     </Text>
-                                   <RadioButtons 
+                                    <RadioButtons
                                         radios={govId_props}
                                         initial={0}
-                                        labelColor={colorData.brandColor.primaryLighter}
+                                        labelColor={
+                                            colorData.brandColor.primaryLighter
+                                        }
                                     />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Goverment ID"
                                         placeholder="Type to enter your Goverment ID"
-                                        onChangeText={(govermentID) => setGovermentID(govermentID)}
+                                        onChangeText={(govermentID) =>
+                                            setGovermentID(govermentID)
+                                        }
                                         value={govermentID}
-                                        
-                                     
                                     />
                                 </View>
-
                             </View>
                         </ProgressStep>
 
                         <ProgressStep
                             label="Payment"
-                            finishBtnText={"Save and Proceed"}
-                            previousBtnText={"Back to Insurance"}
+                            finishBtnText={'Save and Proceed'}
+                            previousBtnText={'Back to Insurance'}
+                            onSubmit={() => navigation.navigate('Home Page')}
                         >
                             <View>
-
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Cardholder Name"
-                                        placeholder={'Type to enter your the name on your card'}
-                                        onChangeText={(cardholderName) => setCardholderName(cardholderName)}
+                                        placeholder={
+                                            'Type to enter your the name on your card'
+                                        }
+                                        onChangeText={(cardholderName) =>
+                                            setCardholderName(cardholderName)
+                                        }
                                         value={cardholderName}
                                     />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Card Number"
-                                        placeholder={'Type to enter your card number'}
+                                        placeholder={
+                                            'Type to enter your card number'
+                                        }
                                         autoCompleteType="cc-number"
-                                        onChangeText={(cardNumber) => setCardNumber(cardNumber)}
+                                        onChangeText={(cardNumber) =>
+                                            setCardNumber(cardNumber)
+                                        }
                                         value={cardNumber}
                                         keyboardType="number-pad"
                                     />
                                 </View>
                                 <View style={styles.row}>
-                                    <View style={[styles.spacing, {width: 155}]}>
+                                    <View
+                                        style={[styles.spacing, { width: 155 }]}
+                                    >
                                         <TextField
                                             label="Expiration Date"
                                             placeholder={'MM/YY'}
                                             autoCompleteType="cc-exp"
-                                            onChangeText={(expDate) => setExpDate(expDate)}
+                                            onChangeText={(expDate) =>
+                                                setExpDate(expDate)
+                                            }
                                             value={expDate}
                                             keyboardType="number-pad"
                                         />
                                     </View>
-                                    <View style={[styles.spacing, {width: 155}]}>
+                                    <View
+                                        style={[styles.spacing, { width: 155 }]}
+                                    >
                                         <TextField
                                             label="CVV"
                                             placeholder={'3-digit'}
@@ -227,9 +263,13 @@ const CreateAccount = ({ navigation }) => {
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Street Address Line 1"
-                                        placeholder={'Type to enter your street address'}
+                                        placeholder={
+                                            'Type to enter your street address'
+                                        }
                                         autoCompleteType="street-address"
-                                        onChangeText={(streetAddress1) => setStreetAddress1(streetAddress1)}
+                                        onChangeText={(streetAddress1) =>
+                                            setStreetAddress1(streetAddress1)
+                                        }
                                         value={streetAddress1}
                                     />
                                 </View>
@@ -237,25 +277,35 @@ const CreateAccount = ({ navigation }) => {
                                     <TextField
                                         label="Street Address Line 2 (Optional)"
                                         autoCompleteType="street-address"
-                                        onChangeText={(streetAddress2) => setStreetAddress2(streetAddress2)}
+                                        onChangeText={(streetAddress2) =>
+                                            setStreetAddress2(streetAddress2)
+                                        }
                                         value={streetAddress2}
                                     />
                                 </View>
-                                <View style={styles.row}> 
-                                    <View style={[styles.spacing, {width: 155}]}>
+                                <View style={styles.row}>
+                                    <View
+                                        style={[styles.spacing, { width: 155 }]}
+                                    >
                                         <TextField
                                             label="City"
                                             placeholder={'Enter your city'}
-                                            onChangeText={(city) => setCity(city)}
+                                            onChangeText={(city) =>
+                                                setCity(city)
+                                            }
                                             value={city}
                                         />
                                     </View>
-                                    <View style={[styles.spacing, {width: 155}]}>
+                                    <View
+                                        style={[styles.spacing, { width: 155 }]}
+                                    >
                                         <TextField
                                             label="ZIP Code"
                                             placeholder={'Ex. 98101'}
                                             autoCompleteType="postal-code"
-                                            onChangeText={(zipCode) => setZipCode(zipCode)}
+                                            onChangeText={(zipCode) =>
+                                                setZipCode(zipCode)
+                                            }
                                             value={zipCode}
                                         />
                                     </View>
@@ -263,21 +313,27 @@ const CreateAccount = ({ navigation }) => {
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="State or Province"
-                                        placeholder={'Type to enter your state or province'}
-                                        onChangeText={(state) => setState(state)}
+                                        placeholder={
+                                            'Type to enter your state or province'
+                                        }
+                                        onChangeText={(state) =>
+                                            setState(state)
+                                        }
                                         value={state}
                                     />
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
                                         label="Country"
-                                        placeholder={'Type to enter your country'}
-                                        onChangeText={(country) => setCountry(country)}
+                                        placeholder={
+                                            'Type to enter your country'
+                                        }
+                                        onChangeText={(country) =>
+                                            setCountry(country)
+                                        }
                                         value={country}
                                     />
                                 </View>
-
-                                
                             </View>
                         </ProgressStep>
                     </ProgressSteps>
@@ -286,8 +342,6 @@ const CreateAccount = ({ navigation }) => {
         </ScrollView>
     );
 };
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -328,10 +382,8 @@ const styles = StyleSheet.create({
     },
     titleStyle: {
         fontSize: 18,
-        fontFamily: "Arial",
-    }
-
-
+        fontFamily: 'Arial',
+    },
 });
 
 export default CreateAccount;
