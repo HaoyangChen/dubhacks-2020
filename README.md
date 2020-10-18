@@ -21,9 +21,9 @@ There are dozens of healthcare apps and websites, but few are easily accessible 
 
 Vigor is a mobile app specially designed with improved accessibility that enables senior adults to manage appointments and receive care from their practitioners in a more timely manner.
 
--   Feature #1: Signing up is simple; one-click to log in with the email and no passwords to remember
--   Feature #2: Guide the elderly step-by-step to fill out a form that helps them make an appointment easily in the future.
--   Feature #3: Allow the elderly to schedule, reschedule, or cancel appointments online.
+-   Feature #1: We aim at simplifying the sign-up process, enabling users to log into the app with their emails or phone numbers in one click instead of having to remember passwords.
+-   Feature #2: We create step-by-step instructions to guide the elderly to fill out their basic information, insurance, and payment when they first log into the app. The information is stored in the app, eliminating the repetitive steps when making doctor appointments in the future.
+-   Feature #3: Vigor allows the elderly to schedule, reschedule, and cancel appointments online, as well as virtually meeting with doctors based on their preference through the chat feature.
 
 ## Mobile App UI Design:
 
