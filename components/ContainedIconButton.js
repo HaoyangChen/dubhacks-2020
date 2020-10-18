@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from 'react-native-paper';
-import { StyleSheet, CheckBox } from 'react-native';
+import { StyleSheet } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import colorData from '../data/color.json';
 
@@ -8,7 +8,11 @@ const ContainedIconButton = (params) => {
     return (
         <Button
             theme={{ roundness: 8 }}
-            style={{ width: params.width, height: params.height }}
+            style={[
+                styles.btnStyle,
+                params.width ? { width: params.width } : { width: '100%' },
+                params.height ? { height: params.height } : { height: 60 },
+            ]}
             color={colorData.brandColor.primary}
             icon={({ color }) => (
                 <FontAwesome
@@ -17,8 +21,6 @@ const ContainedIconButton = (params) => {
                 />
             )}
             labelStyle={styles.containedButtonLabel}
-            onPress={params.onPress}
-            disabled={params.disabled}
             mode="contained"
         >
             {params.btnText}
@@ -34,9 +36,17 @@ const styles = StyleSheet.create({
         textTransform: 'capitalize',
         fontWeight: 'normal',
     },
+    btnStyle: {
+        justifyContent: 'center',
+        shadowColor: 'rgba(0, 0, 0, 0.25)',
+        shadowOpacity: 1,
+        elevation: 6,
+        shadowRadius: 8,
+        shadowOffset: { width: 2, height: 2 },
+    },
     iconStyle: {
         transform: [{ scale: 1.5 }],
-        marginLeft: 5,
+        marginRight: 8,
     },
 });
 
