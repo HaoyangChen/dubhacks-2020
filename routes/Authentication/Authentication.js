@@ -1,9 +1,12 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Dimensions } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import ContainedIconButton from '../../components/ContainedIconButton';
 
-const Authentication = () => {
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+
+const Authentication = ({ navigation }) => {
     return (
         <View>
             <Image
@@ -31,7 +34,10 @@ const Authentication = () => {
                     btnText="Continue with Yahoo"
                 />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonStyle}>
+            <TouchableOpacity
+                style={styles.buttonStyle}
+                onPress={() => navigation.navigate('Home Page')}
+            >
                 <ContainedIconButton
                     iconName="phone"
                     width="85%"
@@ -45,7 +51,7 @@ const Authentication = () => {
 const styles = StyleSheet.create({
     loginGraphics: {
         height: '35%',
-        width: '100%',
+        width: width,
         resizeMode: 'stretch',
     },
     tapTitle: {

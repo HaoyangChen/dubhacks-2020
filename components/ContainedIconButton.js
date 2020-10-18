@@ -17,6 +17,7 @@ const ContainedIconButton = (params) => {
                 />
             )}
             labelStyle={styles.containedButtonLabel}
+            onPress={params.onPress}
             disabled={params.disabled}
             mode="contained"
         >
