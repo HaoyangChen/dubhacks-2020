@@ -24,17 +24,17 @@ const Notifications = ({ notification }) => {
 
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.wrapper}>
+            <View>
                 {/* Header */}
-                <View style={styles.header}>
+                <View style={styles.cardTopStyle}>
                     <Image
                         source={require('../../../assets/settings/notificationIcon.png')}
-                        style={styles.headerIcon}
+                        style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.headerText}>Notification</Text>
+                    <Text style={styles.cardTopText}>Notification</Text>
                 </View>
                 {/* Selection list */}
-                <View style={styles.content}>
+                <View style={styles.cardBottomStyle}>
                     <Text>I want to receive notifications about ...</Text>
                     <View style={styles.option}>
                         <CheckBox
@@ -129,32 +129,47 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'solid',
     },
-    header: {
-        backgroundColor: colorData.brandColor.primaryLighter,
+
+    cardTopStyle: {
         width: '100%',
-        flex: 1,
-        height: Math.floor(width / 6),
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: colorData.brandColor.primaryLighter,
+        marginTop: 40,
         flexDirection: 'row',
+        height: 55,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        paddingLeft: 80,
+        paddingRight: 80,
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
     },
-    headerIcon: {
-        width: 20,
-        height: 20,
-        marginLeft: 5,
+    cardBtnIcon: {
+        width: 23,
+        height: 23,
         justifyContent: 'center',
         alignItems: 'center',
+        resizeMode: 'stretch',
     },
-    headerText: {
-        fontSize: 14,
+    cardTopText: {
+        color: colorData.neutralColor.lightest,
+        fontSize: 18,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         fontWeight: 'normal',
-        textAlign: 'center',
-        width: '50%',
-        marginLeft: -15,
-        color: colorData.neutralColor.lightest,
-        fontStyle: 'normal',
-        textAlign: 'center',
+        lineHeight: 31,
+    },
+    cardBottomStyle: {
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8,
+        backgroundColor: colorData.neutralColor.lightest,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+        padding: 28,
+        alignItems: 'center',
+        flex: 1,
+        marginBottom: 80,
     },
 
     content: {
@@ -172,16 +187,21 @@ const styles = StyleSheet.create({
     },
 
     button: {
+        flex: 1,
+        flexDirection: 'row',
         backgroundColor: colorData.neutralColor.lightest,
-        width: '90%',
-        height: Math.floor(height / 6 - 22),
+        width: '100%',
+        // height: Math.floor(height / 6 - 22),
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row',
-        padding: 40,
+        padding: 30,
         borderRadius: 8,
-        marginTop: 10,
-        flex: 1,
+        marginBottom: 30,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
     },
     buttonIcon: {
         width: 20,
@@ -213,8 +233,7 @@ const styles = StyleSheet.create({
     },
 
     cancelButton: {
-        backgroundColor: colorData.brandColor.lightest,
-        borderRadius: 5,
+        borderRadius: 8,
         borderColor: colorData.brandColor.primaryLighter,
         borderStyle: 'solid',
         borderWidth: 1,
@@ -225,6 +244,7 @@ const styles = StyleSheet.create({
     cancelText: {
         marginLeft: -15,
         color: colorData.brandColor.primaryLighter,
+        fontSize: 18,
     },
 });
 
