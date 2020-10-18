@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Platform, Button } from 'react-native';
 import * as firebase from 'firebase';
 
 import { AppContext } from './../../context/ContextProvider';
-import * as firebase from 'firebase';
 import * as Google from 'expo-google-app-auth';
 
 import { googleConfig } from '../../config/googleSignIn.config';
@@ -15,8 +14,10 @@ export default function LogIn({ navigation }) {
         try {
             const result = await Google.logInAsync(googleConfig);
             if (result.type === 'success') {
+                // The app has passed through this point
+                // So the API key should not be the issue
                 onSignIn(result, navigation, login);
-            } else if (type === 'cancel') {
+            } else if (result.type === 'cancel') {
                 navigation.navigate('Register');
             }
         } catch (err) {
@@ -37,7 +38,7 @@ export default function LogIn({ navigation }) {
 // If not we create a credential using firebase and user tokenId + accessToken
 // and use that credential to authenticate with firebase
 function onSignIn(googleUser, navigation, login) {
-    console.log('Google Auth Response', googleUser);
+    // console.log('Google Auth Response', googleUser);
     // We need to register an Observer on Firebase Auth to make sure auth is initialized.
     var unsubscribe = firebase
         .auth()
@@ -50,21 +51,24 @@ function onSignIn(googleUser, navigation, login) {
                     googleUser.idToken,
                     googleUser.accessToken,
                 );
+                console.log('checkpoint 1');
                 // Sign in with credential from the Google user.
                 firebase
                     .auth()
                     .signInWithCredential(credential)
                     .then((result) => {
-                        console.log(result);
+                        console.log('checkpoint 2');
+
                         // Set the user in our global state
                         login(googleUser.id);
                         // Then navigate user to dashboard
-                        navigation.navigate('Dashboard');
+                        navigation.navigate('Home Page');
                     })
                     .catch(function (error) {
                         // Handle Errors here.
                         var errorCode = error.code;
                         var errorMessage = error.message;
+                        console.log(errorMessage);
                         // The email of the user's account used.
                         var email = error.email;
                         // The firebase.auth.AuthCredential type that was used.
@@ -73,17 +77,20 @@ function onSignIn(googleUser, navigation, login) {
                     });
             } else {
                 console.log('User already signed-in Firebase.');
+                navigation.navigate('Home Page');
             }
         });
 }
 function isUserEqual(googleUser, firebaseUser) {
     if (firebaseUser) {
         var providerData = firebaseUser.providerData;
+        // console.log(providerData);
+        // console.log(googleUser);
         for (var i = 0; i < providerData.length; i++) {
             if (
                 providerData[i].providerId ===
                     firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
-                providerData[i].uid === googleUser.getBasicProfile().getId()
+                providerData[i].uid === googleUser.user.id
             ) {
                 // We don't need to re-auth the Firebase connection.
                 return true;
