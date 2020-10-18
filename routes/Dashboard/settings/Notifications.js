@@ -133,7 +133,7 @@ const Notifications = ({ notification }) => {
                             style={styles.buttonIcon}
                         />
                         <Text style={[styles.buttonText, styles.saveText]}>
-                            Save change
+                            Save Change
                         </Text>
                     </TouchableOpacity>
                 </View>
