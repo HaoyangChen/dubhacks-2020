@@ -6,6 +6,7 @@ import 'react-native-gesture-handler';
 import Authentication from './Authentication/Authentication';
 import Dashboard from './Dashboard/Dashboard';
 import FillFormScreen from './Authentication/FillFormScreen';
+import MyInformation from './Dashboard/myInformation/MyInformation';
 import colorData from '../data/color.json';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
@@ -29,6 +30,10 @@ export default function Routes() {
                     <Stack.Screen name="Welcome" component={Authentication} />
                     <Stack.Screen name="Home Page" component={Dashboard} />
                     <Stack.Screen name="Fill Form" component={FillFormScreen} />
+                    <Stack.Screen
+                        name="My Information"
+                        component={MyInformation}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>

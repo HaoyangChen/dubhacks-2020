@@ -77,7 +77,10 @@ const Dashboard = ({ navigation }) => {
                     />
                     <Text style={styles.cardText}>Manage Appointments</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cardBtnStyle}>
+                <TouchableOpacity
+                    style={styles.cardBtnStyle}
+                    onPress={() => navigation.navigate('My Information')}
+                >
                     <Image
                         source={require('../../assets/homepage/iconManage.png')}
                         style={styles.cardBtnIcon}
