@@ -10,6 +10,8 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import colors from '../../data/color.json';
 import ContainedIconButton from '../../components/ContainedIconButton';
+import colorData from '../../data/color.json';
+import { color } from 'react-native-reanimated';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -33,11 +35,14 @@ const Authentication = ({ navigation }) => {
                     <ContainedIconButton
                         iconName="google"
                         btnText="Continue with Gmail"
+                        textColor={colorData.neutralColor.lightest}
+                        btnColor={colorData.brandColor.primary}
                     />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonStyle}>
                     <ContainedIconButton
                         iconName="yahoo"
+                        textColor={colorData.neutralColor.lightest}
                         btnText="Continue with Yahoo"
                     />
                 </TouchableOpacity>
@@ -47,6 +52,7 @@ const Authentication = ({ navigation }) => {
                 >
                     <ContainedIconButton
                         iconName="phone"
+                        textColor={colorData.neutralColor.lightest}
                         btnText="Continue with Phone"
                     />
                 </TouchableOpacity>
