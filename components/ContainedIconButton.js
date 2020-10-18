@@ -13,14 +13,17 @@ const ContainedIconButton = (params) => {
                 params.width ? { width: params.width } : { width: '100%' },
                 params.height ? { height: params.height } : { height: 60 },
             ]}
-            color={colorData.brandColor.primary}
+            color={params.btnColor}
             icon={({ color }) => (
                 <FontAwesome
                     name={params.iconName}
                     style={[styles.iconStyle, { color: color }]}
                 />
             )}
-            labelStyle={styles.containedButtonLabel}
+            labelStyle={[
+                styles.containedButtonLabel,
+                { color: params.textColor },
+            ]}
             mode="contained"
         >
             {params.btnText}
@@ -32,7 +35,6 @@ const styles = StyleSheet.create({
     containedButtonLabel: {
         fontSize: 18,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        color: colorData.neutralColor.lightest,
         textTransform: 'capitalize',
         fontWeight: 'normal',
     },
