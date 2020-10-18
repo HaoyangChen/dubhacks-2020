@@ -4,12 +4,15 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
+    Image,
+    ScrollView,
     Dimensions,
 } from 'react-native';
 import * as firebase from 'firebase';
 import colorData from '../../data/color.json';
 import { color } from 'react-native-reanimated';
 import ContainedIconButton from '../../components/ContainedIconButton';
+import { Card } from 'react-native-paper';
 
 const width = Dimensions.get('window').width;
 
@@ -28,10 +31,14 @@ const Dashboard = ({ navigation }) => {
     // }, []);
 
     return (
-        <View>
-            <Text style={styles.titleStyle}>Welcome, John Doe</Text>
-            <Text style={styles.subTitleStyle}>How can we help you today?</Text>
-            <TouchableOpacity style={[styles.listItem]}>
+        <ScrollView style={styles.container}>
+            <View style={[styles.homeHeaderStyle]}>
+                <Text style={styles.titleStyle}>Welcome, John Doe</Text>
+                <Text style={styles.subTitleStyle}>
+                    How can we help you today?
+                </Text>
+            </View>
+            <TouchableOpacity style={[styles.listItem, styles.cardTop]}>
                 <View style={[styles.listItemLeft]} />
                 <View style={[styles.listItemRight]}>
                     <Text style={[styles.fontCardTitle, styles.cardTitle]}>
@@ -62,7 +69,39 @@ const Dashboard = ({ navigation }) => {
                 </View>
                 {/* </View> */}
             </TouchableOpacity>
-        </View>
+            <View style={styles.cardBtnWrapper}>
+                <TouchableOpacity style={styles.cardBtnStyle}>
+                    <Image
+                        source={require('../../assets/homepage/iconAppointment.png')}
+                        style={styles.cardBtnIcon}
+                    />
+                    <Text style={styles.cardText}>Manage Appointments</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.cardBtnStyle}>
+                    <Image
+                        source={require('../../assets/homepage/iconManage.png')}
+                        style={styles.cardBtnIcon}
+                    />
+                    <Text style={styles.cardText}>Manage My Information</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.cardBtnStyle}>
+                    <Image
+                        source={require('../../assets/homepage/iconDoctor.png')}
+                        style={styles.cardBtnIcon}
+                    />
+                    <Text style={styles.cardText}>
+                        Chat with Doctor or Nurse
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.cardBtnStyle}>
+                    <Image
+                        source={require('../../assets/homepage/iconSetting.png')}
+                        style={styles.cardBtnIcon}
+                    />
+                    <Text style={styles.cardText}>Change Settings</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     );
 };
 
@@ -81,6 +120,13 @@ const styles = StyleSheet.create({
         lineHeight: 31,
         textAlign: 'center',
         color: colorData.brandColor.primaryLighter,
+    },
+    homeHeaderStyle: {
+        backgroundColor: colorData.neutralColor.lightest,
+        paddingBottom: 20,
+    },
+    cardTop: {
+        marginTop: 20,
     },
     listItem: {
         width: width - 50,
@@ -152,6 +198,37 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         lineHeight: 31,
         color: colorData.neutralColor.darker,
+    },
+    // Card Button
+    cardBtnWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        alignContent: 'space-around',
+    },
+    cardBtnStyle: {
+        backgroundColor: colorData.brandColor.primaryLighter,
+        width: Math.floor(width / 2 - 35),
+        height: Math.floor(width / 2 - 35),
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 5,
+    },
+    cardBtnIcon: {
+        width: 60,
+        height: 60,
+        justifyContent: 'center',
+        alignItems: 'center',
+        resizeMode: 'contain',
+    },
+    cardText: {
+        fontSize: 18,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        fontWeight: 'normal',
+        lineHeight: 31,
+        textAlign: 'center',
+        marginTop: 10,
+        color: colorData.neutralColor.lightest,
     },
 });
 

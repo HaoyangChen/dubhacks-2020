@@ -5,9 +5,9 @@ import 'react-native-gesture-handler';
 
 import Authentication from './Authentication/Authentication';
 import Dashboard from './Dashboard/Dashboard';
+import FillFormScreen from './Authentication/FillFormScreen';
 import colorData from '../data/color.json';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import LogIn from './Authentication/LogInRoute';
 
 const Stack = createStackNavigator();
 
@@ -25,9 +25,10 @@ export default function Routes() {
     return (
         <PaperProvider theme={theme}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Authentication">
-                    <Stack.Screen name="Welcome" component={LogIn} />
+                <Stack.Navigator>
+                    <Stack.Screen name="Welcome" component={Authentication} />
                     <Stack.Screen name="Home Page" component={Dashboard} />
+                    <Stack.Screen name="Fill Form" component={FillFormScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>
