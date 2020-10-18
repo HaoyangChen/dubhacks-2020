@@ -69,7 +69,7 @@ const Dashboard = ({ navigation }) => {
                 </View>
                 {/* </View> */}
             </TouchableOpacity>
-            <View>
+            <View style={styles.cardBtnWrapper}>
                 <TouchableOpacity style={styles.cardBtnStyle}>
                     <Image
                         source={require('../../assets/homepage/iconAppointment.png')}
@@ -200,12 +200,19 @@ const styles = StyleSheet.create({
         color: colorData.neutralColor.darker,
     },
     // Card Button
+    cardBtnWrapper: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        alignContent: 'space-around',
+    },
     cardBtnStyle: {
         backgroundColor: colorData.brandColor.primaryLighter,
-        width: Math.floor(width / 2 - 15),
-        height: Math.floor(width / 2 - 15),
+        width: Math.floor(width / 2 - 35),
+        height: Math.floor(width / 2 - 35),
         justifyContent: 'center',
         alignItems: 'center',
+        margin: 5,
     },
     cardBtnIcon: {
         width: 60,

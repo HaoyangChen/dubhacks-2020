@@ -60,7 +60,7 @@ function onSignIn(googleUser, navigation, login) {
                         // Set the user in our global state
                         login(googleUser.id);
                         // Then navigate user to dashboard
-                        navigation.navigate('Dashboard');
+                        navigation.navigate('Home Page');
                     })
                     .catch(function (error) {
                         // Handle Errors here.
