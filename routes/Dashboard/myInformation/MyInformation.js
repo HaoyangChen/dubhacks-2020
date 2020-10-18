@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Platform,
     Dimensions,
 } from 'react-native';
 import * as firebase from 'firebase';
@@ -16,7 +17,7 @@ import ContainedIconButton from '../../../components/ContainedIconButton';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const MyInformation = () => {
+const MyInformation = ({ navigation }) => {
     return (
         <ScrollView style={styles.container}>
             <TouchableOpacity style={styles.cardBtnStyle}>
@@ -26,7 +27,10 @@ const MyInformation = () => {
                 />
                 <Text style={styles.cardText}>Manage Appointments</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cardBtnStyle}>
+            <TouchableOpacity
+                style={styles.cardBtnStyle}
+                onPress={() => navigation.navigate('Practitioners')}
+            >
                 <Image
                     source={require('../../../assets/myinformation/practitionerIcon.png')}
                     style={styles.cardBtnIcon}
@@ -47,7 +51,9 @@ const MyInformation = () => {
                 />
                 <Text style={styles.cardText}>Insurance</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cardBtnStyle}>
+            <TouchableOpacity
+                style={[styles.cardBtnStyle, styles.bottomMargin]}
+            >
                 <Image
                     source={require('../../../assets/myinformation/paymentIcon.png')}
                     style={styles.cardBtnIcon}
@@ -88,6 +94,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         width: '50%',
         color: colorData.neutralColor.lightest,
+    },
+    bottomMargin: {
+        marginBottom: 100,
     },
 });
 

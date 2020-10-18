@@ -8,6 +8,7 @@ import Dashboard from './Dashboard/Dashboard';
 import FillFormScreen from './Authentication/FillFormScreen';
 import MyInformation from './Dashboard/myInformation/MyInformation';
 import SettingsScreen from './Dashboard/settings/Settings';
+import PractitionersScreen from './Dashboard/myInformation/PractitionersScreen';
 import colorData from '../data/color.json';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
@@ -36,6 +37,10 @@ export default function Routes() {
                         component={MyInformation}
                     />
                     <Stack.Screen name="Settings" component={SettingsScreen} />
+                    <Stack.Screen
+                        name="Practitioners"
+                        component={PractitionersScreen}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>

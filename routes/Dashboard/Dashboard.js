@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Platform,
     Dimensions,
 } from 'react-native';
 import * as firebase from 'firebase';
