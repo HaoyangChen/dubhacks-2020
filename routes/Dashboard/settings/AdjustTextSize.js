@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     View,
     Text,
@@ -6,13 +6,8 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
-    Dimensions,
 } from 'react-native';
-import ContainedIconButton from '../../../components/ContainedIconButton';
 import colorData from '../../../data/color.json';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const AdjustTextSize = ({ notification }) => {
     return (
@@ -43,9 +38,7 @@ const AdjustTextSize = ({ notification }) => {
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                    style={[styles.button, styles.cancelButton]}
-                >
+                <TouchableOpacity style={[styles.button, styles.cancelButton]}>
                     <Image
                         source={require('../../../assets/settings/cancelIcon.png')}
                         style={[styles.buttonIcon, styles.cancelIcon]}
@@ -54,9 +47,7 @@ const AdjustTextSize = ({ notification }) => {
                         Cancel
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.button, styles.saveButton]}
-                >
+                <TouchableOpacity style={[styles.button, styles.saveButton]}>
                     <Image
                         source={require('../../../assets/settings/saveIcon.png')}
                         style={styles.buttonIcon}
@@ -99,7 +90,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         lineHeight: 37.4,
-        marginLeft: 12, 
+        marginLeft: 12,
     },
 
     cardBottomStyle: {
@@ -126,7 +117,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         padding: 30,
-        borderWidth:0,
+        borderWidth: 0,
         borderRadius: 8,
         marginBottom: 30,
         shadowColor: '#000',
@@ -167,7 +158,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
-        width: "100%",
+        width: '100%',
         borderRadius: 8,
         marginTop: 16,
     },
@@ -214,7 +205,7 @@ const styles = StyleSheet.create({
         marginLeft: -15,
         color: colorData.brandColor.primaryLighter,
         fontSize: 18,
-        lineHeight: 30.6
+        lineHeight: 30.6,
     },
 });
 

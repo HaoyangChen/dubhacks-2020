@@ -1,27 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
-    View,
     Text,
     StyleSheet,
     TouchableOpacity,
     Image,
     ScrollView,
     Platform,
-    Dimensions,
 } from 'react-native';
-import * as firebase from 'firebase';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import colorData from '../../../data/color.json';
-import { color } from 'react-native-reanimated';
-import ContainedIconButton from '../../../components/ContainedIconButton';
 
 import AdjustTextSize from './AdjustTextSize';
 import Notifications from './Notifications';
 import PaymentSettings from './PaymentSettings';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 const Stack = createStackNavigator();
 
 const Settings = ({ navigation }) => {
@@ -35,7 +27,7 @@ const Settings = ({ navigation }) => {
                     source={require('../../../assets/settings/textsizeIcon.png')}
                     style={styles.cardBtnIcon}
                 />
-                <Text style={styles.cardText}>{"Adjust\nText Size"}</Text>
+                <Text style={styles.cardText}>{'Adjust\nText Size'}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -79,7 +71,7 @@ const SettingsScreenOptions = () => {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 16,
-        backgroundColor:colorData.neutralColor.background,
+        backgroundColor: colorData.neutralColor.background,
     },
     cardBtnStyle: {
         backgroundColor: colorData.brandColor.primaryLighter,

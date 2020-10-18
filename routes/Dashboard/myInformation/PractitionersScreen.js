@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity,
     Image,
     ScrollView,
     Platform,
     Dimensions,
 } from 'react-native';
-import * as firebase from 'firebase';
 import colorData from '../../../data/color.json';
 import ContainedIconButton from '../../../components/ContainedIconButton';
 

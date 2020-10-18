@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
     View,
     Text,
@@ -9,11 +9,8 @@ import {
     Platform,
     Dimensions,
 } from 'react-native';
-import * as firebase from 'firebase';
 import colorData from '../../data/color.json';
-import { color } from 'react-native-reanimated';
 import ContainedIconButton from '../../components/ContainedIconButton';
-import { Card } from 'react-native-paper';
 
 const width = Dimensions.get('window').width;
 
@@ -86,7 +83,9 @@ const Dashboard = ({ navigation }) => {
                         source={require('../../assets/homepage/iconManage.png')}
                         style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.cardText}>{"Manage\nMy Information"}</Text>
+                    <Text style={styles.cardText}>
+                        {'Manage\nMy Information'}
+                    </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cardBtnStyle}>
                     <Image
@@ -94,7 +93,7 @@ const Dashboard = ({ navigation }) => {
                         style={styles.cardBtnIcon}
                     />
                     <Text style={styles.cardText}>
-                        {"Chat with\nDoctor or Nurse"}
+                        {'Chat with\nDoctor or Nurse'}
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -105,7 +104,7 @@ const Dashboard = ({ navigation }) => {
                         source={require('../../assets/homepage/iconSetting.png')}
                         style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.cardText}>{"Change\nSettings"}</Text>
+                    <Text style={styles.cardText}>{'Change\nSettings'}</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -114,8 +113,8 @@ const Dashboard = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:colorData.neutralColor.background,
-    }, 
+        backgroundColor: colorData.neutralColor.background,
+    },
     titleStyle: {
         fontSize: 28,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
@@ -211,7 +210,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         elevation: 6,
         shadowRadius: 8,
-        shadowOffset:{width: 2, height: 2,},
+        shadowOffset: { width: 2, height: 2 },
         borderRadius: 8,
         width: Math.floor(width / 2 - 24),
         height: Math.floor(width / 2 - 24),

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Button } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
-import colorData from '../data/color.json';
 
 const ContainedIconButton = (params) => {
     return (

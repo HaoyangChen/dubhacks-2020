@@ -12,7 +12,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import colors from '../../data/color.json';
 import ContainedIconButton from '../../components/ContainedIconButton';
 import colorData from '../../data/color.json';
-import { color } from 'react-native-reanimated';
 
 import * as firebase from 'firebase';
 import * as Google from 'expo-google-app-auth';
@@ -20,7 +19,6 @@ import { AppContext } from './../../context/ContextProvider';
 import { googleConfig } from '../../config/googleSignIn.config';
 
 const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const Authentication = ({ navigation }) => {
     const { login } = useContext(AppContext);

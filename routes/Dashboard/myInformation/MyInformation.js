@@ -1,19 +1,13 @@
 import React, { useEffect } from 'react';
 import {
-    View,
     Text,
     StyleSheet,
     TouchableOpacity,
     Image,
     ScrollView,
     Platform,
-    Dimensions,
 } from 'react-native';
-import * as firebase from 'firebase';
 import colorData from '../../../data/color.json';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const MyInformation = ({ navigation }) => {
     return (

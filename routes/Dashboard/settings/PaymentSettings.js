@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -8,7 +8,6 @@ import {
     ScrollView,
     Dimensions,
 } from 'react-native';
-import { color } from 'react-native-reanimated';
 
 import RadioForm, {
     RadioButton,
@@ -17,9 +16,6 @@ import RadioForm, {
 } from 'react-native-simple-radio-button';
 
 import colorData from '../../../data/color.json';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const radio_props = [
     { label: 'As soon as I make an appointment', value: 0 },
@@ -156,7 +152,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         fontSize: 22,
-        color:colorData.neutralColor.darkest,
+        color: colorData.neutralColor.darkest,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
     },
     cardBottomStyle: {
@@ -194,11 +190,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
-        width: "100%",
+        width: '100%',
         borderRadius: 8,
         marginTop: 16,
     },
-    
+
     buttonIcon: {
         width: 20,
         height: 20,

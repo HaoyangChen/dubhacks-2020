@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -11,9 +11,6 @@ import {
 import CheckBox from 'react-native-check-box';
 
 import colorData from '../../../data/color.json';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 const Notifications = ({ notification }) => {
     const [toggle_1, setToggle1] = useState(false);
@@ -43,12 +40,14 @@ const Notifications = ({ notification }) => {
                         I want to receive notifications about ...
                     </Text>
                     {/* Selection list */}
-                    <View style={[styles.option, { marginTop: 24}]}>
+                    <View style={[styles.option, { marginTop: 24 }]}>
                         <CheckBox
                             disabled={false}
                             rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
-                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
+                            checkedCheckBoxColor={
+                                colorData.brandColor.primaryLighter
+                            }
                             isChecked={toggle_1}
                             onClick={() => {
                                 setToggle1(!toggle_1);
@@ -61,7 +60,9 @@ const Notifications = ({ notification }) => {
                             disabled={false}
                             rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
-                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
+                            checkedCheckBoxColor={
+                                colorData.brandColor.primaryLighter
+                            }
                             isChecked={toggle_2}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -75,7 +76,9 @@ const Notifications = ({ notification }) => {
                             disabled={false}
                             rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
-                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
+                            checkedCheckBoxColor={
+                                colorData.brandColor.primaryLighter
+                            }
                             isChecked={toggle_3}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -89,7 +92,9 @@ const Notifications = ({ notification }) => {
                             disabled={false}
                             rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
-                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
+                            checkedCheckBoxColor={
+                                colorData.brandColor.primaryLighter
+                            }
                             isChecked={toggle_4}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -103,7 +108,9 @@ const Notifications = ({ notification }) => {
                             disabled={false}
                             rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
-                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
+                            checkedCheckBoxColor={
+                                colorData.brandColor.primaryLighter
+                            }
                             isChecked={toggle_5}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -178,7 +185,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         lineHeight: 37.4,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        width: "100%",
+        width: '100%',
     },
     cardBottomStyle: {
         borderBottomLeftRadius: 8,
@@ -220,7 +227,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
-        width: "100%",
+        width: '100%',
         borderRadius: 8,
         marginTop: 16,
     },
