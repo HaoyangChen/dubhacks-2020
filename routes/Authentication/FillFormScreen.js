@@ -59,12 +59,12 @@ const styles = StyleSheet.create({
     },
     homeHeaderStyle: {
         backgroundColor: colorData.brandColor.primary,
-        height: height * 0.2,
+        height: '25%',
         justifyContent: 'center',
         alignItems: 'center',
     },
     loginGraphics: {
-        height: height * 0.3,
+        height: '42%',
         width: width,
         resizeMode: 'stretch',
     },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         color: colorData.neutralColor.darkest,
     },
     buttonStyle: {
-        marginTop: height * 0.08,
+        marginTop: '8%',
     },
 });
 
