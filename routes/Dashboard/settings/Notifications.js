@@ -34,10 +34,17 @@ const Notifications = ({ notification }) => {
                     />
                     <Text style={styles.cardTopText}>Notification</Text>
                 </View>
-                {/* Selection list */}
                 <View style={styles.cardBottomStyle}>
-                    <Text>I want to receive notifications about ...</Text>
-                    <View style={styles.option}>
+                    <Text
+                        style={[
+                            styles.cardTopText,
+                            { color: colorData.neutralColor.darkest },
+                        ]}
+                    >
+                        I want to receive notifications about ...
+                    </Text>
+                    {/* Selection list */}
+                    <View style={[styles.option, { marginTop: 10 }]}>
                         <CheckBox
                             disabled={false}
                             isChecked={toggle_1}
@@ -80,7 +87,7 @@ const Notifications = ({ notification }) => {
                         />
                         <Text>New chats</Text>
                     </View>
-                    <View style={styles.option}>
+                    <View style={[styles.option, { marginBottom: 20 }]}>
                         <CheckBox
                             disabled={false}
                             isChecked={toggle_5}
@@ -185,6 +192,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
+        marginLeft: -20,
+        paddingBottom: 10,
     },
 
     button: {

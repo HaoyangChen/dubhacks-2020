@@ -40,7 +40,14 @@ const PaymentSettings = ({ notification }) => {
                 </View>
 
                 <View style={styles.cardBottomStyle}>
-                    <Text>Charge me for the service</Text>
+                    <Text
+                        style={[
+                            styles.cardTopText,
+                            { color: colorData.neutralColor.darkest },
+                        ]}
+                    >
+                        Charge me for the service
+                    </Text>
                     {/* Selection list */}
                     <RadioForm
                         formHorizontal={false}
@@ -179,7 +186,7 @@ const styles = StyleSheet.create({
     },
     form: {
         marginBottom: 30,
-        marginTop: 20,
+        marginTop: 10,
     },
 
     button: {
