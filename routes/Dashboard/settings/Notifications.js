@@ -46,6 +46,7 @@ const Notifications = ({ notification }) => {
                     <View style={[styles.option, { marginTop: 24}]}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
                             checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_1}
@@ -58,6 +59,7 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
                             checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_2}
@@ -71,6 +73,7 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
                             checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_3}
@@ -84,6 +87,7 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
                             checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_4}
@@ -97,6 +101,7 @@ const Notifications = ({ notification }) => {
                     <View style={[styles.option, { marginBottom: 24 }]}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
                             checkBoxColor={colorData.brandColor.darker}
                             checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_5}
@@ -205,7 +210,10 @@ const styles = StyleSheet.create({
         marginLeft: -20,
         marginBottom: 24,
     },
-
+    checkboxText: {
+        fontSize: 16,
+        color: colorData.neutralColor.darkest,
+    },
     button: {
         flex: 1,
         flexDirection: 'row',
