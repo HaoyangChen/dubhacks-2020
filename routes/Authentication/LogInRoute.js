@@ -51,12 +51,14 @@ function onSignIn(googleUser, navigation, login) {
                     googleUser.idToken,
                     googleUser.accessToken,
                 );
+                console.log('checkpoint 1');
                 // Sign in with credential from the Google user.
                 firebase
                     .auth()
                     .signInWithCredential(credential)
                     .then((result) => {
-                        console.log('result here');
+                        console.log('checkpoint 2');
+
                         // Set the user in our global state
                         login(googleUser.id);
                         // Then navigate user to dashboard
@@ -66,6 +68,7 @@ function onSignIn(googleUser, navigation, login) {
                         // Handle Errors here.
                         var errorCode = error.code;
                         var errorMessage = error.message;
+                        console.log(errorMessage);
                         // The email of the user's account used.
                         var email = error.email;
                         // The firebase.auth.AuthCredential type that was used.
@@ -74,17 +77,20 @@ function onSignIn(googleUser, navigation, login) {
                     });
             } else {
                 console.log('User already signed-in Firebase.');
+                navigation.navigate('Home Page');
             }
         });
 }
 function isUserEqual(googleUser, firebaseUser) {
     if (firebaseUser) {
         var providerData = firebaseUser.providerData;
+        // console.log(providerData);
+        // console.log(googleUser);
         for (var i = 0; i < providerData.length; i++) {
             if (
                 providerData[i].providerId ===
                     firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
-                providerData[i].uid === googleUser.getBasicProfile().getId()
+                providerData[i].uid === googleUser.user.id
             ) {
                 // We don't need to re-auth the Firebase connection.
                 return true;
