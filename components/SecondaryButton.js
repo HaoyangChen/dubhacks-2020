@@ -12,7 +12,10 @@ const SecondaryButton = (params) => {
     <Button 
       {...params}
       theme={{roundness: 8}}
-      style={{width: params.width, height: 60, borderWidth: 1}}
+      style={[
+        styles.btnStyle, 
+        params.width ? {width: params.width} : {width: "100%"},
+        params.height? {height: params.height} : {height: 60}]}
       color={ params.color ? params.color : colors.neutralColor.darker}
       labelStyle={styles.textStyle}
       onPress={params.onPress}
@@ -29,6 +32,10 @@ const styles = StyleSheet.create( {
     fontFamily: 'Arial',
     color: colors.brandColor.primary,
     textTransform: 'capitalize',
+  },
+  btnStyle: {
+    justifyContent: "center",
+    borderWidth: 1,
   },
 });
 

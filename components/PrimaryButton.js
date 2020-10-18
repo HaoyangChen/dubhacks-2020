@@ -12,7 +12,10 @@ const PrimaryButton = (params) => {
     <Button 
       {...params}
       theme={{roundness: 8}}
-      style={{width: params.width, height: 60}}
+      style={[
+        styles.btnStyle, 
+        params.width ? {width: params.width} : {width: "100%"},
+        params.height? {height: params.height} : {height: 60}]}
       color={ params.color ? params.color : colors.brandColor.primary}
       labelStyle={styles.textStyle}
       onPress={params.onPress}
@@ -32,6 +35,14 @@ const styles = StyleSheet.create( {
     textAlignVertical: 'center',
     textTransform: 'capitalize',
   },
+  btnStyle: {
+    justifyContent: "center",
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOpacity: 1,
+    elevation: 6,
+    shadowRadius: 8,
+    shadowOffset:{width: 2, height: 2,},
+},
 });
 
 export default PrimaryButton;
