@@ -13,11 +13,9 @@ export default function LogIn({ navigation }) {
 
     const signInWithGoogle = async () => {
         try {
-            const { type, accessToken, user } = await Google.logInAsync(
-                googleConfig,
-            );
-            if (type === 'success') {
-                onSignIn(user, navigation, login);
+            const result = await Google.logInAsync(googleConfig);
+            if (result.type === 'success') {
+                onSignIn(result, navigation, login);
             } else if (type === 'cancel') {
                 navigation.navigate('Register');
             }
