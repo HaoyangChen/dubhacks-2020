@@ -61,8 +61,8 @@ function onSignIn(googleUser, navigation, login) {
 
                         // Set the user in our global state
                         login(googleUser.id);
-                        // Then navigate user to dashboard
-                        navigation.navigate('Home Page');
+                        // Then navigate user to Create Account Screen
+                        navigation.navigate('Create Account');
                     })
                     .catch(function (error) {
                         // Handle Errors here.
