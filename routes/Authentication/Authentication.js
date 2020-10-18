@@ -48,7 +48,7 @@ const Authentication = ({ navigation }) => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonStyle}
-                    onPress={() => navigation.navigate('Home Page')}
+                    onPress={() => navigation.navigate('Fill Form')}
                 >
                     <ContainedIconButton
                         iconName="phone"
