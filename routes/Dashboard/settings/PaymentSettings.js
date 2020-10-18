@@ -15,45 +15,28 @@ import colorData from '../../../data/color.json';
 import { color } from 'react-native-reanimated';
 import ContainedIconButton from '../../../components/ContainedIconButton';
 
-import AdjustTextSize from './AdjustTextSize';
-import Notifications from './Notifications';
-import PaymentSettings from './PaymentSettings';
-
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 const Stack = createStackNavigator();
 
-const Settings = ({ navigation }) => {
+const PaymentSettings = ({ notification }) => {
     return (
         <ScrollView style={styles.container}>
-            <TouchableOpacity
-                style={styles.cardBtnStyle}
-                onPress={() => navigation.navigate('Adjust Text Size')}
-            >
+            <TouchableOpacity style={styles.cardBtnStyle}>
                 <Image
                     source={require('../../../assets/settings/textsizeIcon.png')}
                     style={styles.cardBtnIcon}
                 />
                 <Text style={styles.cardText}>Adjust Text Size</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-                style={styles.cardBtnStyle}
-                onPress={() => {
-                    console.log('Notification setting selected');
-                    navigation.navigate('Notifications');
-                }}
-            >
+            <TouchableOpacity style={styles.cardBtnStyle}>
                 <Image
                     source={require('../../../assets/settings/notificationIcon.png')}
                     style={styles.cardBtnIcon}
                 />
                 <Text style={styles.cardText}>Notifications</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.cardBtnStyle}
-                onPress={() => navigation.navigate('Payment Settings')}
-            >
+            <TouchableOpacity style={styles.cardBtnStyle}>
                 <Image
                     source={require('../../../assets/settings/paymentIcon.png')}
                     style={styles.cardBtnIcon}
@@ -61,17 +44,6 @@ const Settings = ({ navigation }) => {
                 <Text style={styles.cardText}>Payment Settings</Text>
             </TouchableOpacity>
         </ScrollView>
-    );
-};
-
-const SettingsScreenOptions = () => {
-    return (
-        <Stack.Navigator initialRouteName="Settings">
-            <Stack.Screen name="Settings" component={Settings} />
-            <Stack.Screen name="Adjust Text Size" component={AdjustTextSize} />
-            <Stack.Screen name="Notifications" component={Notifications} />
-            <Stack.Screen name="Payment Settings" component={PaymentSettings} />
-        </Stack.Navigator>
     );
 };
 
@@ -108,4 +80,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SettingsScreenOptions;
+export default PaymentSettings;
