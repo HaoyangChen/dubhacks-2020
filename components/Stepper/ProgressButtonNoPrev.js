@@ -1,12 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView} from 'react-native';
 
 const ProgressButtonNoPrev = (props) => (
-    <View style={{ marginTop: 48 }}>
-        <View style={{ position: 'absolute', right: 0, bottom: 0 }}>
-            {props.renderNextButton()}
+    <ScrollView>
+        <View style={{marginTop: 32, marginBottom: 32}}>
+            <View>
+                {props.renderNextButton()}
+            </View>
         </View>
-    </View>
+    </ScrollView>
 );
 
 export default ProgressButtonNoPrev; 

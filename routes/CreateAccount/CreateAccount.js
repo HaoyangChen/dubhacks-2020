@@ -75,7 +75,6 @@ const CreateAccount = ({ navigation }) => {
                                         placeholder={'Type to enter your first name'}
                                         onChangeText={(firstName) => setFirstName(firstName)}
                                         value={firstName}
-                                        style={styles.spacing}
                                     />
                                 </View>
                                 <View style={styles.spacing}>
