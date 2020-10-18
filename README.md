@@ -2,12 +2,28 @@
 
 Mobile App Project Repo for DubHacks 2020 (the largest 24-hour hackathon hosted in the Pacific Northwest). Our project name is VIGOR - Better Care and better health just one touch away.
 
-You can watch the project video by clicking this image:
-[![Watch the video](./assets/video_cover.png)](https://www.youtube.com/watch?v=hXfqR9V-i_g&feature=youtu.be)
-
 ## Tools and Framework Used:
 
 This project was developed using [React Native](https://reactnative.dev/) and the open-source platform of [Expo](https://docs.expo.io/). We created the frontend with React Native and used Google's [Firebase](https://firebase.google.com/) to handle the backend functionality
+
+You can watch the project video by clicking this image:
+[![Watch the video](./assets/video_cover.png)](https://www.youtube.com/watch?v=hXfqR9V-i_g&feature=youtu.be)
+
+## Problem Statement:
+
+Technology has evolved quickly and drastically over the past decades, but this fast-paced development can be difficult to keep up with, leaving many, particularly the elderly members of our society. Now, more than ever, with the rise of the COVID-19 pandemic, it is increasingly important that the elderly are able to easily access and use technology, particularly to meet their healthcare needs.
+
+There are dozens of healthcare apps and websites, but few are easily accessible for the elderly. With confusing icons, low visual contrast, hidden buttons, and no guidance, the elderly are usually not able to accomplish certain tasks as they expect. Therefore, our problem statement becomes the following:
+
+"How might we help seniors receive care from their practitioners faster by improving their appointment-making experience?"
+
+## What it does
+
+Vigor is a mobile app specially designed with improved accessibility that enables senior adults to manage appointments and receive care from their practitioners in a more timely manner.
+
+-   Feature #1: Signing up is simple; one-click to log in with the email and no passwords to remember
+-   Feature #2: Guide the elderly step-by-step to fill out a form that helps them make an appointment easily in the future.
+-   Feature #3: Allow the elderly to schedule, reschedule, or cancel appointments online.
 
 ## Mobile App UI Design:
 
