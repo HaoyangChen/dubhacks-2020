@@ -22,15 +22,34 @@ const FillFormScreen = ({ navigation }) => {
             <View style={[styles.homeHeaderStyle]}>
                 <Text style={styles.titleStyle}>Welcome, John Doe</Text>
             </View>
-            <Image
-                source={require('../../assets/fillform/formIcon.png')}
-                style={styles.loginGraphics}
-            />
+            <View style={styles.containerBottom}>
+                <Image
+                    source={require('../../assets/fillform/formIcon.png')}
+                    style={styles.loginGraphics}
+                />
+                <Text style={styles.normalText}>
+                    Let me guide you to complete a form so that you can make an
+                    appointment in the future easily.
+                </Text>
+                <TouchableOpacity
+                    style={styles.buttonStyle}
+                    onPress={() => navigation.navigate('Home Page')}
+                >
+                    <ContainedIconButton
+                        textColor={colorData.neutralColor.lightest}
+                        btnText="Start Filling the Form"
+                    />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    containerBottom: {
+        paddingLeft: 21,
+        paddingRight: 21,
+    },
     titleStyle: {
         fontSize: 28,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
@@ -48,6 +67,16 @@ const styles = StyleSheet.create({
         height: height * 0.3,
         width: width,
         resizeMode: 'stretch',
+    },
+    normalText: {
+        fontSize: 22,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        fontWeight: 'normal',
+        lineHeight: 37,
+        color: colorData.neutralColor.darkest,
+    },
+    buttonStyle: {
+        marginTop: height * 0.08,
     },
 });
 
