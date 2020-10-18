@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import * as firebase from 'firebase';
 
 import { AppContext } from './../../context/ContextProvider';
-import * as firebase from 'firebase';
 import * as Google from 'expo-google-app-auth';
 
 import { googleConfig } from '../../config/googleSignIn.config';
@@ -15,8 +14,10 @@ export default function LogIn({ navigation }) {
         try {
             const result = await Google.logInAsync(googleConfig);
             if (result.type === 'success') {
+                // The app has passed through this point
+                // So the API key should not be the issue
                 onSignIn(result, navigation, login);
-            } else if (type === 'cancel') {
+            } else if (result.type === 'cancel') {
                 navigation.navigate('Register');
             }
         } catch (err) {
@@ -37,7 +38,7 @@ export default function LogIn({ navigation }) {
 // If not we create a credential using firebase and user tokenId + accessToken
 // and use that credential to authenticate with firebase
 function onSignIn(googleUser, navigation, login) {
-    console.log('Google Auth Response', googleUser);
+    // console.log('Google Auth Response', googleUser);
     // We need to register an Observer on Firebase Auth to make sure auth is initialized.
     var unsubscribe = firebase
         .auth()
@@ -55,7 +56,7 @@ function onSignIn(googleUser, navigation, login) {
                     .auth()
                     .signInWithCredential(credential)
                     .then((result) => {
-                        console.log(result);
+                        console.log('result here');
                         // Set the user in our global state
                         login(googleUser.id);
                         // Then navigate user to dashboard

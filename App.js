@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import colorData from './data/color.json';
 import * as firebase from 'firebase';
 
-import firebaseConfig from './config/firebase.config';
+import { firebaseConfig } from './config/firebase.config';
 import Provider from './Provider';
 
 // const theme = {
