@@ -5,6 +5,7 @@ import {
     Image,
     StyleSheet,
     ScrollView,
+    Platform,
     Dimensions,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';

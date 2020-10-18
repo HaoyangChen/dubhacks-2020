@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Platform,
     Dimensions,
 } from 'react-native';
 import * as firebase from 'firebase';
@@ -47,7 +48,9 @@ const MyInformation = () => {
                 />
                 <Text style={styles.cardText}>Insurance</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cardBtnStyle}>
+            <TouchableOpacity
+                style={[styles.cardBtnStyle, styles.bottomMargin]}
+            >
                 <Image
                     source={require('../../../assets/myinformation/paymentIcon.png')}
                     style={styles.cardBtnIcon}
@@ -88,6 +91,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         width: '50%',
         color: colorData.neutralColor.lightest,
+    },
+    bottomMargin: {
+        marginBottom: 100,
     },
 });
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Platform, Button } from 'react-native';
 import * as firebase from 'firebase';
 
 import { AppContext } from './../../context/ContextProvider';
