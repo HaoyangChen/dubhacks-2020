@@ -31,10 +31,6 @@ export default function Routes() {
             <NavigationContainer>
                 <Stack.Navigator>
                     <Stack.Screen name="Welcome" component={Authentication} />
-                    <Stack.Screen
-                        name="Create Account"
-                        component={CreateAccount}
-                    />
                     <Stack.Screen name="Home Page" component={Dashboard} />
                     <Stack.Screen name="Fill Form" component={FillFormScreen} />
                     <Stack.Screen

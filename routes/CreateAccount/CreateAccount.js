@@ -1,16 +1,20 @@
 import React, { useState, useRef } from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
-import RadioButtons from '../../components/RadioButton';
+
 import colorData from '../../data/color.json';
 import ProgressSteps from '../../components/Stepper/ProgressSteps';
 import ProgressStep from '../../components/Stepper/ProgressStep';
 import TextField from '../../components/TextField';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { color } from 'react-native-reanimated';
+import RadioForm, {
+    RadioButton,
+    RadioButtonInput,
+    RadioButtonLabel,
+} from 'react-native-simple-radio-button';
 
 const CreateAccount = ({ navigation }) => {
     //first step validation
-
+    const [index, setSexIndex] = useState(0);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNum, setPhoneNum] = useState(0);
@@ -44,7 +48,7 @@ const CreateAccount = ({ navigation }) => {
 
     var govId_props = [
         { label: "Driver's License", value: 0 },
-        { label: 'Social Security Number', value: 1 },
+        { label: 'SSN', value: 1 },
     ];
 
     return (
@@ -127,14 +131,46 @@ const CreateAccount = ({ navigation }) => {
                                     >
                                         Select your sex
                                     </Text>
-                                    <RadioButtons
-                                        radios={sex_props}
-                                        initial={0}
+                                    <RadioForm
                                         formHorizontal={true}
-                                        onPress={(value) => {
-                                            this.setState({ value: value });
-                                        }}
-                                    />
+                                        animation={true}
+                                        style={styles.form}
+                                    >
+                                        {/* To create radio buttons, loop through your array of options */}
+                                        {sex_props.map((obj, i) => (
+                                            <View>
+                                                <RadioButton labelHorizontal={true} key={i} style={i === 0 ? {marginLeft: 0}: {marginLeft: 32}}>
+                                                    <RadioButtonInput
+                                                        style={{marginTop: 12}}
+                                                        obj={obj}
+                                                        index={i}
+                                                        isSelected={index === i}
+                                                        onPress={() => setSexIndex(i)}
+                                                        borderWidth={1}
+                                                        buttonInnerColor={
+                                                            colorData.brandColor.primaryLighter
+                                                        }
+                                                        buttonOuterColor={'#000'}
+                                                        buttonSize={15}
+                                                        buttonOuterSize={25}
+                                                        buttonStyle={{}}
+                                                    />
+                                                    <RadioButtonLabel
+                                                        style={{marginTop: 12}}
+                                                        obj={obj}
+                                                        index={i}
+                                                        labelHorizontal={true}
+                                                        onPress={() => setSexIndex(i)}
+                                                        labelStyle={{
+                                                            fontSize: 16,
+                                                            color: colorData.neutralColor.darkest,
+                                                        }}
+                                                        labelWrapStyle={{}}
+                                                    />
+                                                </RadioButton>
+                                            </View>
+                                        ))}
+                                    </RadioForm>
                                 </View>
                             </ScrollView>
                         </ProgressStep>
@@ -179,13 +215,46 @@ const CreateAccount = ({ navigation }) => {
                                     >
                                         Goverment Issued Identification Type
                                     </Text>
-                                    <RadioButtons
-                                        radios={govId_props}
-                                        initial={0}
-                                        labelColor={
-                                            colorData.brandColor.primaryLighter
-                                        }
-                                    />
+                                    <RadioForm
+                                        formHorizontal={true}
+                                        animation={true}
+                                        style={styles.form}
+                                    >
+                                        {/* To create radio buttons, loop through your array of options */}
+                                        {govId_props.map((obj, i) => (
+                                            <View>
+                                                <RadioButton labelHorizontal={true} key={i} style={i === 0 ? {marginLeft: 0}: {marginLeft: 32}}>
+                                                    <RadioButtonInput
+                                                        style={{marginTop: 12}}
+                                                        obj={obj}
+                                                        index={i}
+                                                        isSelected={index === i}
+                                                        onPress={() => setSexIndex(i)}
+                                                        borderWidth={1}
+                                                        buttonInnerColor={
+                                                            colorData.brandColor.primaryLighter
+                                                        }
+                                                        buttonOuterColor={'#000'}
+                                                        buttonSize={15}
+                                                        buttonOuterSize={25}
+                                                        buttonStyle={{}}
+                                                    />
+                                                    <RadioButtonLabel
+                                                        style={{marginTop: 12}}
+                                                        obj={obj}
+                                                        index={i}
+                                                        labelHorizontal={true}
+                                                        onPress={() => setSexIndex(i)}
+                                                        labelStyle={{
+                                                            fontSize: 16,
+                                                            color: colorData.neutralColor.darkest,
+                                                        }}
+                                                        labelWrapStyle={{}}
+                                                    />
+                                                </RadioButton>
+                                            </View>
+                                        ))}
+                                    </RadioForm>
                                 </View>
                                 <View style={styles.spacing}>
                                     <TextField
@@ -383,6 +452,10 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 18,
         fontFamily: 'Arial',
+    },
+    form: {
+        marginBottom: 0,
+        marginTop: 0,
     },
 });
 
