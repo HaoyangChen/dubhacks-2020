@@ -96,7 +96,10 @@ const Dashboard = ({ navigation }) => {
                         Chat with Doctor or Nurse
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cardBtnStyle}>
+                <TouchableOpacity
+                    style={styles.cardBtnStyle}
+                    onPress={() => navigation.navigate('Settings')}
+                >
                     <Image
                         source={require('../../assets/homepage/iconSetting.png')}
                         style={styles.cardBtnIcon}
