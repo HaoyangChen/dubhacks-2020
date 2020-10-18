@@ -8,6 +8,7 @@ import {
     ScrollView,
     Dimensions,
 } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 import RadioForm, {
     RadioButton,
@@ -36,13 +37,13 @@ const PaymentSettings = ({ notification }) => {
                         source={require('../../../assets/settings/notificationIcon.png')}
                         style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.cardTopText}>Payment settings</Text>
+                    <Text style={styles.cardTopText}>Payment Settings</Text>
                 </View>
 
                 <View style={styles.cardBottomStyle}>
                     <Text
                         style={[
-                            styles.cardTopText,
+                            styles.cardText,
                             { color: colorData.neutralColor.darkest },
                         ]}
                     >
@@ -78,7 +79,7 @@ const PaymentSettings = ({ notification }) => {
                                         labelHorizontal={true}
                                         onPress={() => setIndex(i)}
                                         labelStyle={{
-                                            fontSize: 14,
+                                            fontSize: 16,
                                             color: 'black',
                                         }}
                                         labelWrapStyle={{}}
@@ -108,7 +109,7 @@ const PaymentSettings = ({ notification }) => {
                             style={styles.buttonIcon}
                         />
                         <Text style={[styles.buttonText, styles.saveText]}>
-                            Save change
+                            Save Change
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -119,54 +120,52 @@ const PaymentSettings = ({ notification }) => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 21,
+        paddingHorizontal: 16,
     },
-    wrapper: {
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
-    },
+
     cardTopStyle: {
         width: '100%',
         backgroundColor: colorData.brandColor.primaryLighter,
-        marginTop: 40,
+        marginTop: 24,
         flexDirection: 'row',
-        height: 55,
+        height: 62,
         justifyContent: 'space-around',
         alignItems: 'center',
-        paddingLeft: 80,
-        paddingRight: 80,
+        paddingLeft: 60,
+        paddingRight: 60,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
     },
     cardBtnIcon: {
-        width: 23,
-        height: 23,
+        width: 24,
+        height: 24,
         justifyContent: 'center',
         alignItems: 'center',
         resizeMode: 'stretch',
     },
     cardTopText: {
         color: colorData.neutralColor.lightest,
-        fontSize: 18,
+        fontSize: 22,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         fontWeight: 'normal',
-        lineHeight: 31,
-        marginLeft: 15,
+        lineHeight: 37.4,
+        marginLeft: 12,
     },
-    wrapper: {
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
+    cardText: {
+        textAlign: 'left',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        fontSize: 22,
+        color:colorData.neutralColor.darkest,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
     },
-
     cardBottomStyle: {
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
         backgroundColor: colorData.neutralColor.lightest,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
+        shadowOpacity: 0.25,
         shadowRadius: 2,
         elevation: 5,
         padding: 28,
@@ -192,20 +191,14 @@ const styles = StyleSheet.create({
     button: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: colorData.neutralColor.lightest,
-        width: '100%',
-        // height: Math.floor(height / 6 - 22),
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 30,
+        height: 60,
+        width: "100%",
         borderRadius: 8,
-        marginBottom: 30,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 5,
+        marginTop: 16,
     },
+    
     buttonIcon: {
         width: 20,
         height: 20,
@@ -214,7 +207,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        fontSize: 14,
+        fontSize: 18,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
         fontWeight: 'normal',
         textAlign: 'center',
@@ -239,7 +232,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderColor: colorData.brandColor.primaryLighter,
         borderStyle: 'solid',
-        borderWidth: 1,
+        borderWidth: 2,
     },
     cancelIcon: {
         //backgroundColor: colorData.brandColor.primaryLighter,

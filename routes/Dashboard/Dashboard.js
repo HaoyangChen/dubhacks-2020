@@ -86,7 +86,7 @@ const Dashboard = ({ navigation }) => {
                         source={require('../../assets/homepage/iconManage.png')}
                         style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.cardText}>Manage My Information</Text>
+                    <Text style={styles.cardText}>{"Manage\nMy Information"}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cardBtnStyle}>
                     <Image
@@ -94,7 +94,7 @@ const Dashboard = ({ navigation }) => {
                         style={styles.cardBtnIcon}
                     />
                     <Text style={styles.cardText}>
-                        Chat with Doctor or Nurse
+                        {"Chat with\nDoctor or Nurse"}
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -105,7 +105,7 @@ const Dashboard = ({ navigation }) => {
                         source={require('../../assets/homepage/iconSetting.png')}
                         style={styles.cardBtnIcon}
                     />
-                    <Text style={styles.cardText}>Change Settings</Text>
+                    <Text style={styles.cardText}>{"Change\nSettings"}</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

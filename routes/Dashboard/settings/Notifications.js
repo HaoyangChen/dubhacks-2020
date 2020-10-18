@@ -9,7 +9,6 @@ import {
     Dimensions,
 } from 'react-native';
 import CheckBox from 'react-native-check-box';
-//import CheckBox from '@react-native-community/checkbox';
 
 import colorData from '../../../data/color.json';
 
@@ -37,16 +36,19 @@ const Notifications = ({ notification }) => {
                 <View style={styles.cardBottomStyle}>
                     <Text
                         style={[
-                            styles.cardTopText,
+                            styles.cardText,
                             { color: colorData.neutralColor.darkest },
                         ]}
                     >
                         I want to receive notifications about ...
                     </Text>
                     {/* Selection list */}
-                    <View style={[styles.option, { marginTop: 10 }]}>
+                    <View style={[styles.option, { marginTop: 24}]}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
+                            checkBoxColor={colorData.brandColor.darker}
+                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_1}
                             onClick={() => {
                                 setToggle1(!toggle_1);
@@ -57,6 +59,9 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
+                            checkBoxColor={colorData.brandColor.darker}
+                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_2}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -68,6 +73,9 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
+                            checkBoxColor={colorData.brandColor.darker}
+                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_3}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -79,6 +87,9 @@ const Notifications = ({ notification }) => {
                     <View style={styles.option}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
+                            checkBoxColor={colorData.brandColor.darker}
+                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_4}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -87,9 +98,12 @@ const Notifications = ({ notification }) => {
                         />
                         <Text>New chats</Text>
                     </View>
-                    <View style={[styles.option, { marginBottom: 20 }]}>
+                    <View style={[styles.option, { marginBottom: 24 }]}>
                         <CheckBox
                             disabled={false}
+                            rightTextStyle={styles.checkboxText}
+                            checkBoxColor={colorData.brandColor.darker}
+                            checkedCheckBoxColor={colorData.brandColor.primaryLighter}
                             isChecked={toggle_5}
                             onClick={() => {
                                 // Do some data collect/state toggle here
@@ -119,7 +133,7 @@ const Notifications = ({ notification }) => {
                             style={styles.buttonIcon}
                         />
                         <Text style={[styles.buttonText, styles.saveText]}>
-                            Save change
+                            Save Change
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -130,40 +144,41 @@ const Notifications = ({ notification }) => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 21,
-    },
-    wrapper: {
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
+        paddingHorizontal: 16,
     },
 
     cardTopStyle: {
         width: '100%',
         backgroundColor: colorData.brandColor.primaryLighter,
-        marginTop: 40,
+        marginTop: 24,
         flexDirection: 'row',
-        height: 55,
+        height: 62,
         justifyContent: 'space-around',
         alignItems: 'center',
-        paddingLeft: 80,
-        paddingRight: 80,
+        paddingLeft: 100,
+        paddingRight: 100,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
     },
     cardBtnIcon: {
-        width: 23,
-        height: 23,
+        width: 24,
+        height: 24,
         justifyContent: 'center',
         alignItems: 'center',
         resizeMode: 'stretch',
     },
     cardTopText: {
         color: colorData.neutralColor.lightest,
-        fontSize: 18,
+        fontSize: 22,
+        marginLeft: 12,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
-        lineHeight: 31,
+        lineHeight: 37.4,
+    },
+    cardText: {
+        fontSize: 22,
+        lineHeight: 37.4,
+        fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
+        width: "100%",
     },
     cardBottomStyle: {
         borderBottomLeftRadius: 8,
@@ -171,13 +186,13 @@ const styles = StyleSheet.create({
         backgroundColor: colorData.neutralColor.lightest,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
+        shadowOpacity: 0.25,
         shadowRadius: 2,
         elevation: 5,
         padding: 28,
         alignItems: 'center',
         flex: 1,
-        marginBottom: 80,
+        marginBottom: 64,
     },
 
     content: {
@@ -188,30 +203,26 @@ const styles = StyleSheet.create({
     option: {
         flex: 1,
         marginRight: 'auto',
-        paddingLeft: 30,
+        paddingLeft: 16,
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
         marginLeft: -20,
-        paddingBottom: 10,
+        marginBottom: 24,
     },
-
+    checkboxText: {
+        fontSize: 16,
+        color: colorData.neutralColor.darkest,
+    },
     button: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: colorData.neutralColor.lightest,
-        width: '100%',
-        // height: Math.floor(height / 6 - 22),
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 30,
+        height: 60,
+        width: "100%",
         borderRadius: 8,
-        marginBottom: 30,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 5,
+        marginTop: 16,
     },
     buttonIcon: {
         width: 20,
@@ -221,12 +232,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        fontSize: 14,
+        fontSize: 18,
+        lineHeight: 30.6,
         fontFamily: Platform.OS === 'ios' ? 'Arial' : 'Roboto-Regular',
-        fontWeight: 'normal',
         textAlign: 'center',
         width: '50%',
-        fontStyle: 'normal',
         textAlign: 'center',
     },
 
